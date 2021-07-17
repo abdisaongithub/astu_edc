@@ -6,6 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Startup extends Model
 {
+    protected $fillable = [
+        'name',
+        'description',
+        'detail',
+        'category',
+        'slogan',
+        'email',
+        'website',
+        'location'
+    ];
+
     public function images()
     {
         return $this->hasMany('App/Models/Image');

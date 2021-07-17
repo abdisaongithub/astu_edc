@@ -53,4 +53,7 @@ class PagesController extends Controller
 
         return redirect()->back()->with('success');
     }
+    // TODO: include google maps on the about page
 }
+
+// TODO: make startup details dynamic

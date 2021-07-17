@@ -33,6 +33,8 @@ class StartupRequest extends FormRequest
             'email' => 'sometimes|string',
             'website' => 'sometimes|string',
             'slogan' => 'sometimes|string',
+
+            'phone' => 'sometimes',
         ];
     }
 }

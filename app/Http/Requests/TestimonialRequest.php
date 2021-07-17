@@ -26,9 +26,10 @@ class TestimonialRequest extends FormRequest
         return [
             'name' => 'required|string',
             'position' => 'required|string',
-            'image' => 'required',
-            'detail' => 'required|string',
-            'email' => 'required|email',
+//            'image' => 'required',
+            'testimonial' => 'required|string',
         ];
     }
 }
+// TODO: Check all images
+

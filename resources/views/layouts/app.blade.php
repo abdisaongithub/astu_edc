@@ -26,6 +26,8 @@
 
     <link href="css/style.css" rel="stylesheet">
 
+    @yield('headers')
+
 </head>
 <body>
 
@@ -53,6 +55,11 @@
                     </ul>
                 </li>
                 <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                @guest
+                @else
+                    <li><a href="{{ route('dashboard_index') }}">Dashboard</a></li>
+                @endguest
+
             </ul>
         </nav><!-- .nav-menu -->
     </div>
@@ -82,6 +89,7 @@
 
 <script src="js/main.js"></script>
 
+@yield('scripts')
 
 <!-- ======= Footer ======= -->
 <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
