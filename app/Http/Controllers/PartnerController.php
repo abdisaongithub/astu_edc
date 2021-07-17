@@ -20,6 +20,28 @@ class PartnerController extends Controller
         $partner->image = 'http://localhost:8000/img/team/team-1.jpg';
         $partner->description = 'Description not provided';
         $partner->save();
-        return redirect()->back()->with('success');
+
+        return redirect(route('dashboard_index'))->with('success', 'Partner Added Successfully');
+    }
+
+    public function edit($id)
+    {
+        $partner = Partner::findOrFail($id);
+        return view('dashboard.partner.edit', ['partner' => $partner]);
+    }
+
+    public function update(PartnerRequest $request, $id)
+    {
+        $validated = $request->validated();
+
+        $partner = Partner::findOrFail($id);
+        $partner->image = 'http://localhost:8000/img/team/team-1.jpg';
+        $partner->description = 'Description not provided';
+        $partner->name = $validated['name'];
+        $partner->link = $validated['link'];
+        $partner->save();
+
+        return redirect(route('dashboard_index'))->with('success', 'Partner Updated Successfully');
+
     }
 }

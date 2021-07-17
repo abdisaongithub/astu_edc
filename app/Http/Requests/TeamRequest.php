@@ -26,13 +26,12 @@ class TeamRequest extends FormRequest
         return [
             'name' => 'required|string',
             'position' => 'required|string',
-            'image' => 'required',
+            'image' => 'sometimes',
             'telegram' => 'sometimes|string',
             'facebook' => 'sometimes|string',
             'instagram' => 'sometimes|string',
             'twitter' => 'sometimes|string',
             'linkedin' => 'sometimes|string',
-
         ];
     }
 }

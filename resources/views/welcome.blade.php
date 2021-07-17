@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex justify-cntent-center align-items-center">
         <div id="heroCarousel" class="container carousel carousel-fade" data-ride="carousel">
@@ -68,11 +69,6 @@
 
     <main id="main">
 
-
-        <!-- ======= Why Us Section ======= -->
-
-
-        <!-- ======= Features Section ======= -->
         <section class="features">
             <div class="container">
 
@@ -160,9 +156,8 @@
 
 
             </div>
-        </section><!-- End Features Section -->
-        <!-- ======= Services Section ======= -->
-        <!-- ======= Latest Section ======= -->
+        </section>
+
         <section class="latest"></section>
 
         <div class="section-title">
@@ -170,12 +165,10 @@
         </div>
 
         @if($news)
-
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 img-box bg-dark">
                         <img src="{{ $news[0]->image }}" class="img-fluid" alt="">
-
                     </div>
 
                     <div class="col-lg-6 d-flex flex-column justify-content-center p-5 bg-secondary">
@@ -186,8 +179,6 @@
                             <p class="news-description"> {{ $news[0]->description }} </p>
                             <a href="https://{{ $news[0]->link }}">see more?</a>
                         </div>
-
-
                     </div>
                 </div>
 
@@ -218,6 +209,13 @@
                                         {{ $startup->email }} <br>
                                         <a href="https://{{ $startup->website }}" target="_blank">Website &neArr;</a>
                                     </p>
+                                    @guest
+                                    @else
+                                        <a href="{{ route('startup_edit', $startup->id) }}"
+                                           class="btn btn-sm btn-outline-info mt-2">
+                                            Edit
+                                        </a>
+                                    @endif
                                 </div>
                             </div>
                             @break($loop->index == 5)
@@ -237,21 +235,30 @@
                     <div class="row">
 
                         @foreach($partners as $partner)
-                            <div class="col-lg-2">
+                            <div class="col-lg-2 mr-3">
                                 <img src="{{ $partner->image }}" class="testimonial-img" style="height: 200px"
                                      alt="{{ $partner->description == null ? '' : $partner->description  }}"></br>
 
                                 <a href="{{ $partner->link == null ? '#' : $partner->link }}" target="_blank"><h4
                                         class="title">{{ $partner->name }}</h4></a>
                                 {{--                        TODO: Clearup where links are displayed and replace full links in database--}}
+
+                                @guest
+                                @else
+                                    <a href="{{ route('partner_edit', $partner->id) }}"
+                                       class="btn btn-sm btn-outline-info my-2">
+                                        Edit
+                                    </a>
+                                @endif
                             </div>
+
+
                         @endforeach
 
                     </div>
                 </div>
             </div>
         @endif
-
     </main><!-- End #main -->
 
 @endsection

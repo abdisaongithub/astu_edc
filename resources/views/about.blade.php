@@ -134,7 +134,13 @@
                                     <div class="member-info">
                                         <h4>{{ $team->name }}</h4>
                                         <span>{{ $team->position }}</span>
-
+                                        @guest
+                                        @else
+                                            <a href="{{ route('team_edit', $team->id) }}"
+                                               class="btn btn-sm btn-outline-info mt-2">
+                                                Edit
+                                            </a>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -166,6 +172,13 @@
                             {{ $test->testimonial }}
                             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                         </p>
+                        @guest
+                        @else
+                            <a href="{{ route('testimonial_edit', $test->id) }}"
+                               class="btn btn-sm btn-outline-info mt-2">
+                                Edit
+                            </a>
+                        @endif
                     </div>
                     @endforeach
 

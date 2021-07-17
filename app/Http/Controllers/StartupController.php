@@ -22,7 +22,35 @@ class StartupController extends Controller
 
         $startup->save();
 
-        return redirect()->back()->with('success');
+        return redirect(route('dashboard_index'))->with('success', 'Startup Created Successfully');
+    }
+
+    public function edit($id)
+    {
+        $startup = Startup::find($id);
+        return view('dashboard.startup.edit', ['startup' => $startup]);
+    }
+
+    public function update(StartupRequest $request, $id)
+    {
+        $validated = $request->validated();
+
+        $startup = Startup::findOrFail($id);
+
+        $startup->name = $validated['name'];
+        $startup->description = $validated['description'];
+        $startup->detail = $validated['detail'];
+        $startup->category = $validated['category'];
+
+        $startup->slogan = $validated['slogan'];
+        $startup->email = $validated['email'];
+        $startup->website = $validated['website'];
+        $startup->location = $validated['location'];
+
+        $startup->save();
+
+        return redirect(route('dashboard_index'))->with('success', 'Startup Updated Successfully');
+
     }
 }
 

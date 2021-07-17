@@ -21,6 +21,25 @@ class TeamController extends Controller
         $team->image = 'http://localhost:8000/img/team/team-1.jpg';
         $team->save();
 
-        return redirect()->back()->with('success');
+        return redirect(route('dashboard_index'))->with('success', 'Team Added Successfully');
+    }
+
+    public function edit($id)
+    {
+        $team = Team::findOrFail($id);
+        return view('dashboard.team.edit', ['team' => $team]);
+    }
+
+    public function update(TeamRequest $request, $id)
+    {
+        $validated = $request->validated();
+        $team = Team::findOrFail($id);
+
+        $team->name = $validated['name'];
+        $team->position = $validated['position'];
+
+        $team->save();
+
+        return redirect(route('dashboard_index'))->with('success', 'Team Updated Successfully');
     }
 }
