@@ -11,7 +11,6 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-
     public function index()
     {
         $startups = Startup::all();
@@ -27,6 +26,4 @@ class DashboardController extends Controller
             'partners' => $partners
             ]);
     }
-
-
 }
