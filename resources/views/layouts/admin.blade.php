@@ -2,17 +2,16 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="http://localhost:8000/dashboard_assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('dashboard_assets/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
-    <link rel="stylesheet" href="http://localhost:8000/dashboard_assets/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="http://localhost:8000/dashboard_assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="http://localhost:8000/dashboard_assets/fonts/fontawesome5-overrides.min.css">
-    <link rel="stylesheet" href="http://localhost:8000/dashboard_assets/css/styles.min.css">
+    <link rel="stylesheet" href="{{ asset('dashboard_assets/fonts/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard_assets/fonts/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard_assets/fonts/fontawesome5-overrides.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard_assets/css/styles.min.css') }}">
 
     @yield('headers')
 </head>
@@ -35,7 +34,6 @@
                     <a class="nav-link" href="{{ route('testimonial_create') }}"><i class="fas fa-user-circle"></i><span>Add Testimonial</span></a>
                     <a class="nav-link" href="{{ route('team_create') }}"><i class="fas fa-user-circle"></i><span>Add New Team Member</span></a>
                     <a class="nav-link" href="{{ route('partner_create') }}"><i class="fas fa-user-circle"></i><span>Add New Partner</span></a></li>
-
             </ul>
             <div class="text-center d-none d-md-inline">
                 <button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button>
@@ -59,42 +57,20 @@
                         </li>
 
 {{--                        TODO: show list of messages down here--}}
+{{--                        TODO: find a way to implement this shit--}}
 
                         <li class="nav-item dropdown no-arrow mx-1">
                             <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown" href="#"><span class="badge badge-danger badge-counter">7</span><i class="fas fa-envelope fa-fw"></i></a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-list animated--grow-in">
-                                    <h6 class="dropdown-header">alerts center</h6><a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="http://localhost:8000/dashboard_assets/img/avatars/avatar4.jpeg">
+                                    <h6 class="dropdown-header">Messages</h6><a class="dropdown-item d-flex align-items-center" href="#">
+                                        <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="{{ asset('dashboard_assets/img/avatars/avatar4.jpeg') }}">
                                             <div class="bg-success status-indicator"></div>
                                         </div>
                                         <div class="font-weight-bold">
-                                            <div class="text-truncate"><span>Hi there! I am wondering if you can help me with a problem I've been having.</span></div>
-                                            <p class="small text-gray-500 mb-0">Emily Fowler - 58m</p>
+                                            <div class="text-truncate"><span>Message Content</span></div>
+                                            <p class="small text-gray-500 mb-0">abdtsegaye@gmail.com</p>
                                         </div>
-                                    </a><a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="http://localhost:8000/dashboard_assets/img/avatars/avatar2.jpeg">
-                                            <div class="status-indicator"></div>
-                                        </div>
-                                        <div class="font-weight-bold">
-                                            <div class="text-truncate"><span>I have the photos that you ordered last month!</span></div>
-                                            <p class="small text-gray-500 mb-0">Jae Chun - 1d</p>
-                                        </div>
-                                    </a><a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="http://localhost:8000/dashboard_assets/img/avatars/avatar3.jpeg">
-                                            <div class="bg-warning status-indicator"></div>
-                                        </div>
-                                        <div class="font-weight-bold">
-                                            <div class="text-truncate"><span>Last month's report looks great, I am very happy with the progress so far, keep up the good work!</span></div>
-                                            <p class="small text-gray-500 mb-0">Morgan Alvarez - 2d</p>
-                                        </div>
-                                    </a><a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="http://localhost:8000/dashboard_assets/img/avatars/avatar5.jpeg">
-                                            <div class="bg-success status-indicator"></div>
-                                        </div>
-                                        <div class="font-weight-bold">
-                                            <div class="text-truncate"><span>Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</span></div>
-                                            <p class="small text-gray-500 mb-0">Chicken the Dog · 2w</p>
-                                        </div>
+                                    </a>
                                 </div>
                             </div>
                             <div class="shadow dropdown-list dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown"></div>
@@ -120,6 +96,13 @@
                     </ul>
                 </div>
             </nav>
+
+            @if(count($errors) > 0)
+                {{ $errors }}
+            @endif
+
+{{--            TODO: Use this code to get to the errors--}}
+
             @yield('content')
         </div>
 
@@ -131,11 +114,11 @@
 </div>
 <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
 </div>
-<script src="http://localhost:8000/dashboard_assets/js/jquery.min.js"></script>
-<script src="http://localhost:8000/dashboard_assets/bootstrap/js/bootstrap.min.js"></script>
-<script src="http://localhost:8000/js/chart.min.js"></script>
+<script src="{{ asset('dashboard_assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('dashboard_assets/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/chart.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
-<script src="http://localhost:8000/dashboard_assets/js/script.min.js"></script>
+<script src="{{ asset('dashboard_assets/js/script.min.js') }}"></script>
 
 
 @yield('scripts')

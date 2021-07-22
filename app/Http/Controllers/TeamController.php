@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\TeamRequest;
 use App\Models\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TeamController extends Controller
 {
@@ -18,7 +19,9 @@ class TeamController extends Controller
         $validated = $request->validated();
 
         $team = new Team($validated);
-        $team->image = 'http://localhost:8000/img/team/team-1.jpg';
+
+        $team->image = Storage::disk('local')->put('public/', $request->file('image'));
+
         $team->save();
 
         return redirect(route('dashboard_index'))->with('success', 'Team Added Successfully');

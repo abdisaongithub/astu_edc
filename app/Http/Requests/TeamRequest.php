@@ -26,7 +26,7 @@ class TeamRequest extends FormRequest
         return [
             'name' => 'required|string',
             'position' => 'required|string',
-            'image' => 'sometimes',
+            'image' => 'required',
             'telegram' => 'sometimes|string',
             'facebook' => 'sometimes|string',
             'instagram' => 'sometimes|string',

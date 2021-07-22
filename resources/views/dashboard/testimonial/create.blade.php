@@ -7,7 +7,7 @@
 @section('content')
 
     <section class="contact-clean">
-        <form method="post" action="{{ route('testimonial_store') }}">
+        <form method="post" action="{{ route('testimonial_store') }}" enctype="multipart/form-data">
             @csrf
             <h2 class="text-center">ADD New Testimonial</h2><!-- Start: Success Example -->
             <div class="form-group"><input class="form-control" type="text" name="name"

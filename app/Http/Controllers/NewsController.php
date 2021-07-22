@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\NewsRequest;
 use App\Models\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller
 {
@@ -16,13 +17,13 @@ class NewsController extends Controller
     public function store(NewsRequest $request)
     {
         $validated = $request->validated();
-        unset($validated->image);
-        // TODO:  image name from request
-        // TODO: prepare flash messages
         $news = new News($validated);
-        $news['image'] = 'http://localhost:8000/img/team/team-1.jpg';
+
+        $news->image = Storage::disk('local')->put('public/', $request->file('image'));
+
         $news->save();
-        return redirect()->back()->with('success');
+
+        return redirect(route('dashboard_index'))->with('success');
     }
 
     // TODO prepare editing place for news

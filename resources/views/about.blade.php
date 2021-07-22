@@ -6,15 +6,13 @@
         <!-- ======= About Us Section ======= -->
         <section class="breadcrumbs">
             <div class="container">
-
                 <div class="d-flex justify-content-between align-items-center">
                     <h2>About Us</h2>
                     <ol>
                         <li><a href="{{ route('welcome') }}">Home</a></li>
-                        <li><a href="{{ route('about') }}">About Us</a></li>
+                        <li>About Us</li>
                     </ol>
                 </div>
-
             </div>
         </section><!-- End About Us Section -->
 
@@ -24,7 +22,7 @@
 
                 <div class="row">
                     <div class="col-lg-6">
-                        <img src="img/edc2.jpg" class="img-fluid" alt="">
+                        <img src="{{ asset('img/edc2.jpg') }}" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0">
                         <h3></h3>
@@ -66,7 +64,7 @@
                     <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
                         <div class="card">
                             <div class="card-img">
-                                <img src="img/edc3.jpg" alt="...">
+                                <img src="{{ asset('img/edc3.jpg') }}" alt="...">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title"><a href="#">Our Mission</a></h5>
@@ -80,7 +78,7 @@
                     <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
                         <div class="card">
                             <div class="card-img">
-                                <img src="img/edc1.jpg" alt="...">
+                                <img src="{{ asset('img/edc1.jpg') }}" alt="...">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title"><a href="#">Our Plan</a></h5>
@@ -95,7 +93,7 @@
                     <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
                         <div class="card">
                             <div class="card-img">
-                                <img src="img/service-details-3.jpg" alt="...">
+                                <img src="{{ asset('img/service-details-3.jpg') }}" alt="...">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title"><a href="#">Our Vision</a></h5>
@@ -122,7 +120,7 @@
                             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                                 <div class="member">
                                     <div class="member-img">
-                                        <img src="{{ $team->image }}" class="img-fluid" alt="">
+                                        <img src="{{ Storage::url($team->image) }}" class="img-fluid" alt="">
                                         <div class="social">
 
                                             <a href=""><i class="icofont-twitter"></i></a>
@@ -164,7 +162,7 @@
                 <div class="owl-carousel testimonials-carousel">
                     @foreach($testimonials as $test)
                     <div class="testimonial-item">
-                        <img src="{{ $test->image }}" class="testimonial-img" alt="">
+                        <img src="{{ Storage::url($test->image) }}" class="testimonial-img" alt="">
                         <h3>{{ $test->name }}</h3>
                         <h4>{{ $test->position }}</h4>
                         <p>

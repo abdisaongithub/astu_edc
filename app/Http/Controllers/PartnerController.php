@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PartnerRequest;
 use App\Models\Partner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PartnerController extends Controller
 {
@@ -17,7 +18,9 @@ class PartnerController extends Controller
     {
         $validated = $request->validated();
         $partner = new Partner($validated);
-        $partner->image = 'http://localhost:8000/img/team/team-1.jpg';
+
+        $partner->image = Storage::disk('local')->put('public/', $request->file('image'));
+
         $partner->description = 'Description not provided';
         $partner->save();
 

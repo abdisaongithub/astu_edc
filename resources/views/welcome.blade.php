@@ -160,15 +160,16 @@
 
         <section class="latest"></section>
 
-        <div class="section-title">
-            <h2>Latest News</h2>
-        </div>
+
 
         @if($news)
+            <div class="section-title">
+                <h2>Latest News</h2>
+            </div>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 img-box bg-dark">
-                        <img src="{{ $news[0]->image }}" class="img-fluid" alt="">
+                        <img src="{{ Storage::url($news[0]->image) }}" height="auto" class="img-fluid" alt="">
                     </div>
 
                     <div class="col-lg-6 d-flex flex-column justify-content-center p-5 bg-secondary">
@@ -177,7 +178,7 @@
 
                             <h4 class="title-news">{{ $news[0]->title}}</h4>
                             <p class="news-description"> {{ $news[0]->description }} </p>
-                            <a href="https://{{ $news[0]->link }}">see more?</a>
+                            <a href="https://{{ $news[0]->link }}" target="_blank">see more?</a>
                         </div>
                     </div>
                 </div>
@@ -195,13 +196,13 @@
                         @foreach($startups as $startup)
                             <div class="col-md-6 col-lg-4 d-flex align-items-stretch" data-aos="fade-up">
                                 <div class="icon-box icon-box-cyan">
-                                    <a href="{{ route('startup_detail') }}">
+                                    <a href="{{ route('startup_detail', $startup->id) }}">
                                         {{-- TODO: make this route for the details of each startups--}}
                                         <img class="card-img-top"
-                                             src="{{ $startup->image == null ? 'img/portfolio/portfolio-5.jpg' : $startup->image }}"
+                                             src="{{ $startup->image == null ? 'img/portfolio/portfolio-5.jpg' : Storage::url($startup->image) }}"
                                              alt="">
                                     </a>
-                                    <h4 class="title"><a href="{{ route('startup_detail') }}">{{ $startup->name }}</a>
+                                    <h4 class="title"><a href="{{ route('startup_detail', $startup->id) }}">{{ $startup->name }}</a>
                                     </h4>
                                     {{-- TODO: make this route for the details of each startups--}}
                                     <p class="description bg-light">
@@ -236,10 +237,10 @@
 
                         @foreach($partners as $partner)
                             <div class="col-lg-2 mr-3">
-                                <img src="{{ $partner->image }}" class="testimonial-img" style="height: 200px"
+                                <img src="{{ Storage::url($partner->image) }}" class="testimonial-img" style="height: 200px"
                                      alt="{{ $partner->description == null ? '' : $partner->description  }}"></br>
 
-                                <a href="{{ $partner->link == null ? '#' : $partner->link }}" target="_blank"><h4
+                                <a href="https://{{ $partner->link == null ? '#' : $partner->link }}" target="_blank"><h4
                                         class="title">{{ $partner->name }}</h4></a>
                                 {{--                        TODO: Clearup where links are displayed and replace full links in database--}}
 

@@ -19,6 +19,7 @@ class CreateStartupsTable extends Migration
             $table->text('description');
             $table->text('detail');
             $table->string('category');
+            $table->string('image'); // TODO: UnMigrated to database
             $table->string('slogan')->nullable();
             $table->string('email')->nullable();
             $table->string('website')->nullable();

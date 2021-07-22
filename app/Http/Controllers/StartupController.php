@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StartupRequest;
+use App\Models\Image;
+use App\Models\Phone;
 use App\Models\Startup;
+use Illuminate\Support\Facades\Storage;
 
 class StartupController extends Controller
 {
@@ -16,11 +19,50 @@ class StartupController extends Controller
     {
         $validated = $request->validated();
 
-        unset($validated->phone);
 
         $startup = new Startup($validated);
-
         $startup->save();
+
+        if ($request->phone){
+            $phone = new Phone([
+                'startup_id' => $startup->id,
+                'phone' => $request->phone
+            ]);
+            $phone->save();
+        }
+
+        if ($request->image_1){
+            $path_1 = Storage::disk('local')->put('public/', $request->file('image_1'));
+            $image1 = new Image([
+                'startup_id' => $startup->id,
+                'image' => $path_1
+            ]);
+            $image1->save();
+        }
+        if ($request->image_2){
+            $path_2 = Storage::disk('local')->put('public/', $request->file('image_2'));
+            $image2 = new Image([
+                'startup_id' => $startup->id,
+                'image' => $path_2
+            ]);
+            $image2->save();
+        }
+        if ($request->image_3){
+            $path_3 = Storage::disk('local')->put('public/', $request->file('image_3'));
+            $image3 = new Image([
+                'startup_id' => $startup->id,
+                'image' => $path_3
+            ]);
+            $image3->save();
+        }
+        if ($request->image_4){
+            $path_4 = Storage::disk('local')->put('public/', $request->file('image_4'));
+            $image4 = new Image([
+                'startup_id' => $startup->id,
+                'image' => $path_4
+            ]);
+            $image4->save();
+        }
 
         return redirect(route('dashboard_index'))->with('success', 'Startup Created Successfully');
     }
@@ -48,6 +90,40 @@ class StartupController extends Controller
         $startup->location = $validated['location'];
 
         $startup->save();
+
+//
+//        if ($request->image_1){
+//            $path_1 = Storage::disk('local')->put('public/', $request->file('image_1'));
+//            $image1 = new Image([
+//                'startup_id' => $startup->id,
+//                'image' => $path_1
+//            ]);
+//            $image1->save();
+//        }
+//        if ($request->image_2){
+//            $path_2 = Storage::disk('local')->put('public/', $request->file('image_2'));
+//            $image2 = new Image([
+//                'startup_id' => $startup->id,
+//                'image' => $path_2
+//            ]);
+//            $image2->save();
+//        }
+//        if ($request->image_3){
+//            $path_3 = Storage::disk('local')->put('public/', $request->file('image_3'));
+//            $image3 = new Image([
+//                'startup_id' => $startup->id,
+//                'image' => $path_3
+//            ]);
+//            $image3->save();
+//        }
+//        if ($request->image_4){
+//            $path_4 = Storage::disk('local')->put('public/', $request->file('image_4'));
+//            $image4 = new Image([
+//                'startup_id' => $startup->id,
+//                'image' => $path_4
+//            ]);
+//            $image4->save();
+//        }
 
         return redirect(route('dashboard_index'))->with('success', 'Startup Updated Successfully');
 

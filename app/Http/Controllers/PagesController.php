@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\MessageRequest;
+use App\Models\Image;
 use App\Models\Message;
 use App\Models\News;
 use App\Models\Partner;
 use App\Models\Startup;
 use App\Models\Team;
 use App\Models\Testimonial;
-use Illuminate\Http\Request;
+
+// TODO: Put error messages at the top of the pages
 
 class PagesController extends Controller
 {
@@ -31,12 +33,18 @@ class PagesController extends Controller
 
     public function startups()
     {
-        return view('startups');
+        $startups = Startup::all();
+        $images = Image::all();
+
+        return view('startups', ['startups' => $startups, 'images' => $images]);
     }
 
-    public function startup_detail()
+    public function startup_detail($id)
     {
-        return view('startup_detail');
+        $startup = Startup::findOrFail($id);
+        $images = Image::where('startup_id', $id)->get();
+
+        return view('startup_detail', ['startup' => $startup, 'images' => $images]);
     }
 
     public function contact()

@@ -16,15 +16,15 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
 
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
-    <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="vendor/venobox/venobox.css" rel="stylesheet">
-    <link href="vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="vendor/aos/aos.css" rel="stylesheet">
+    <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/animate.css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/icofont/icofont.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/venobox/venobox.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/owl.carousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/aos/aos.css') }}" rel="stylesheet">
 
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     @yield('headers')
 
@@ -42,19 +42,38 @@
 
         <nav class="nav-menu float-right d-none d-lg-block">
             <ul>
-                <li class="active"><a href="{{ route('welcome') }}">Home</a></li>
-                <li><a href="{{ route('about') }}">About Us</a></li>
-                <li><a href="{{ route('startups') }}">Startups</a></li>
-                <li><a href="club.html">EIC Club</a></li>
+                <li
+                    @if(Route::is('welcome'))
+                    class="active"
+                    @endif
+                >
+                    <a href="{{ route('welcome') }}">Home</a>
+                </li>
+                <li
+                    @if(Route::is('about'))
+                    class="active"
+                    @endif
+                ><a href="{{ route('about') }}">About Us</a></li>
+                <li
+                    @if(Route::is('startups'))
+                    class="active"
+                    @endif
+                ><a href="{{ route('startups') }}">Startups</a></li>
+                {{--                <li><a href="club.html">EIC Club</a></li>--}}
+                {{-- TODO: To be added after the completion of the club's website --}}
                 <li class="drop-down"><a href="">News</a>
                     <ul>
                         <li><a href="#">Latest News</a></li>
 
-                        <li><a href="https://www.edcethiopia.org/index.php/en/news/publications">Publications</a></li>
-
+                        <li><a href="https://www.edcethiopia.org/index.php/en/news/publications" target="_blank">Publications</a>
+                        </li>
                     </ul>
                 </li>
-                <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                <li
+                    @if(Route::is('contact'))
+                    class="active"
+                    @endif
+                ><a href="{{ route('contact') }}">Contact Us</a></li>
                 @guest
                 @else
                     <li><a href="{{ route('dashboard_index') }}">Dashboard</a></li>
@@ -75,19 +94,19 @@
 </div>
 
 <!-- Vendor JS Files -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="vendor/jquery.easing/jquery.easing.min.js"></script>
-<script src="vendor/php-email-form/validate.js"></script>
-<script src="vendor/venobox/venobox.min.js"></script>
-<script src="vendor/waypoints/jquery.waypoints.min.js"></script>
-<script src="vendor/counterup/counterup.min.js"></script>
-<script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-<script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="vendor/aos/aos.js"></script>
+<script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('vendor/jquery.easing/jquery.easing.min.js') }}"></script>
+<script src="{{ asset('vendor/php-email-form/validate.js') }}"></script>
+<script src="{{ asset('vendor/venobox/venobox.min.js') }}"></script>
+<script src="{{ asset('vendor/waypoints/jquery.waypoints.min.js') }}"></script>
+<script src="{{ asset('vendor/counterup/counterup.min.js') }}"></script>
+<script src="{{ asset('vendor/owl.carousel/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+<script src="{{ asset('vendor/aos/aos.js') }}"></script>
 
 
-<script src="js/main.js"></script>
+<script src="{{ asset('js/main.js') }}"></script>
 
 @yield('scripts')
 
@@ -125,10 +144,10 @@
                         Bole, Adama Science And Technology University <br>
                         Oromia, Adama<br>
                         Ethiopia <br><br>
-                        <strong>Phone:</strong> +251-912-773-535 <br>
+                        <strong>Phone:</strong> <a href="tel:+251-22-211-1948"> +251-22-211-1948 </a> <br>
                         <strong>Email:</strong> info@example.com<br>
+                        {{--TODO: Replace email by email from edc domain--}}
                     </p>
-
                 </div>
 
                 <div class="col-lg-3 col-md-6 footer-info">
@@ -142,9 +161,11 @@
                         start or help them to be good innovators and enterprenurs.
                     </p>
                     <div class="social-links mt-3">
-                        <a href="#" class="telegram"><i class="bx bxl-telegram"></i></a>
-                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                        <a href="https://t.me/ASTUEDC" target="_blank" class="telegram"><i class="bx bxl-telegram"></i></a>
+                        <a href="https://www.facebook.com/astuedc" target="_blank" class="facebook"><i
+                                class="bx bxl-facebook"></i></a>
+                        <a href="https://instagram.com/astu_edc?utm_medium=copy_link" target="_blank" class="instagram"><i
+                                class="bx bxl-instagram"></i></a>
 
                     </div>
                 </div>
@@ -159,7 +180,7 @@
         </div>
         <div class="credits">
 
-            Powered by <a href="">Kuta Software Solutions</a>
+            Powered by <a href="t.me/abd_dba" target="_blank">Kuta Software Solutions</a>
 
         </div>
     </div>

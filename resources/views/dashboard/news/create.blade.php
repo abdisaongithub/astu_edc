@@ -7,7 +7,7 @@
 @section('content')
 
     <section class="contact-clean">
-        <form method="POST" action="{{ route('news_store') }}">
+        <form method="POST" action="{{ route('news_store') }}" enctype="multipart/form-data">
             @csrf
             <h2 class="text-center">News Post</h2><!-- Start: Success Example -->
             <div class="form-group">

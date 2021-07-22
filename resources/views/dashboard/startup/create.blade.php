@@ -7,7 +7,7 @@
 
 @section('content')
     <section class="contact-clean">
-        <form method="post" action="{{ route('startup_store') }}">
+        <form method="post" action="{{ route('startup_store') }}" enctype="multipart/form-data">
             @csrf
             <h2 class="text-center">ADD New Startup</h2><!-- Start: Success Example -->
             <div class="row">
@@ -48,16 +48,14 @@
                 <h4>Add some photos for the startup</h4>
                 <div class="row">
                     <div class="col-lg-6">
-                        <input class="form-control-file mb-2" type="file">
-                        <input class="form-control-file mb-2" type="file">
+                        <input class="form-control-file mb-2" type="file" name="image_1">
+                        <input class="form-control-file mb-2" type="file" name="image_2">
                     </div>
                     <div class="col-lg-6">
-                        <input class="form-control-file mb-2" type="file">
-                        <input class="form-control-file mb-2" type="file">
+                        <input class="form-control-file mb-2" type="file" name="image_3">
+                        <input class="form-control-file mb-2" type="file" name="image_4">
                     </div>
                 </div>
-
-
             </div>
             <div class="form-group"><button class="btn btn-primary" type="submit">ADD</button></div>
         </form>

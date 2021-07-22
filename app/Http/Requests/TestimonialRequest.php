@@ -26,7 +26,7 @@ class TestimonialRequest extends FormRequest
         return [
             'name' => 'required|string',
             'position' => 'required|string',
-//            'image' => 'required',
+//            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'testimonial' => 'required|string',
         ];
     }
