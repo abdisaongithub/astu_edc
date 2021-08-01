@@ -15,6 +15,10 @@ Route::get('/startups/{id}', 'PagesController@startup_detail')->name('startup_de
 Route::get('/contact', 'PagesController@contact')->name('contact');
 Route::post('/contact', 'PagesController@contact_submit')->name('contact_submit');
 
+Route::get('/services', 'PagesController@services')->name('services');
+
+Route::get('/news', 'PagesController@news')->name('news');
+
 Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function (){
 
     Route::get('/', 'DashboardController@index')->name('dashboard_index');

@@ -11,7 +11,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <h2>Contact</h2>
                     <ol>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="{{ route('welcome') }}">Home</a></li>
                         <li>Contact</li>
                     </ol>
                 </div>
@@ -91,6 +91,11 @@
         </section><!-- End Contact Section -->
 
         <!-- ======= Map Section ======= -->
+
+        <div class="container my-5">
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6060.472617076122!2d39.2902022355066!3d8.563228875053229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2set!4v1627813935401!5m2!1sen!2set" width="1100" height="450" style="border:0;" allowfullscreen="true" loading="lazy"></iframe>
+        </div>
 
     </main><!-- End #main -->
 

@@ -124,6 +124,7 @@
                             <li><i class="icofont-check"></i><strong> Prototype development supports.</strong></li>
                             <li><i class="icofont-check"></i><strong>Technology Commercialization
                                     assistance.</strong></i>
+                            </li>
 
 
                         </ul>
@@ -141,13 +142,18 @@
                         <ul>
                             <li><i class="icofont-check"></i> <strong>Access to internet services and working
                                     space.</strong></i>
+                            </li>
                             <li><i class="icofont-check"></i> <strong>Links to university resources.</strong></i>
+                            </li>
                             <li><i class="icofont-check"></i> <strong>Links to strategic partners.</strong></i>
+                            </li>
                             <li><i class="icofont-check"></i> <strong>Coaching and membership services.</strong></i>
+                            </li>
                             <li><i class="icofont-check"></i> <strong>Business idea competition.</strong></i>
+                            </li>
                             <li><i class="icofont-check"></i> <strong>Experience and knowledge sharin forum and
                                     networking
-                                    sessions.</strong></i>
+                                    sessions.</strong></i> </li>
 
 
                         </ul>
@@ -162,7 +168,7 @@
 
 
 
-        @if($news)
+        @if(count($news) > 0)
             <div class="section-title">
                 <h2>Latest News</h2>
             </div>
@@ -186,7 +192,7 @@
             </div>
         @endif
 
-        @if($startups)
+        @if(count($startups) > 0)
             <section class="services">
                 <div class="container">
                     <div class="section-title">
@@ -229,7 +235,7 @@
             <!--dont forget partners section-->
         @endif
 
-        @if($partners)
+        @if(count($partners) > 0)
             <div class="section">
                 <div class="container">
                     <h3>Our Partners</h3>
@@ -252,8 +258,6 @@
                                     </a>
                                 @endif
                             </div>
-
-
                         @endforeach
 
                     </div>

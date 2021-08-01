@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Message;
 use App\Models\News;
 use App\Models\Partner;
 use App\Models\Startup;
@@ -18,12 +19,14 @@ class DashboardController extends Controller
         $testimonials = Testimonial::all();
         $teams = Team::all();
         $partners = Partner::all();
+        $messages = Message::all();
         return view('dashboard.index', [
             'startups' => $startups,
             'news' => $news,
             'testimonials' => $testimonials,
             'teams' => $teams,
-            'partners' => $partners
+            'partners' => $partners,
+            'messages' => $messages,
             ]);
     }
 }

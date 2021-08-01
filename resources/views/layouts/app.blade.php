@@ -50,10 +50,10 @@
                     <a href="{{ route('welcome') }}">Home</a>
                 </li>
                 <li
-                    @if(Route::is('about'))
+                    @if(Route::is('services'))
                     class="active"
                     @endif
-                ><a href="{{ route('about') }}">About Us</a></li>
+                ><a href="{{ route('services') }}">Services</a></li>
                 <li
                     @if(Route::is('startups'))
                     class="active"
@@ -61,23 +61,31 @@
                 ><a href="{{ route('startups') }}">Startups</a></li>
                 {{--                <li><a href="club.html">EIC Club</a></li>--}}
                 {{-- TODO: To be added after the completion of the club's website --}}
-                <li class="drop-down"><a href="">News</a>
-                    <ul>
-                        <li><a href="#">Latest News</a></li>
 
-                        <li><a href="https://www.edcethiopia.org/index.php/en/news/publications" target="_blank">Publications</a>
-                        </li>
-                    </ul>
-                </li>
+                <li
+                    @if(Route::is('about'))
+                    class="active"
+                    @endif
+                ><a href="{{ route('about') }}">About Us</a></li>
                 <li
                     @if(Route::is('contact'))
                     class="active"
                     @endif
                 ><a href="{{ route('contact') }}">Contact Us</a></li>
+
                 @guest
                 @else
                     <li><a href="{{ route('dashboard_index') }}">Dashboard</a></li>
                 @endguest
+
+                <li class="drop-down"><a href="">News</a>
+                    <ul>
+                        <li><a href="{{ route('news') }}">Latest News</a></li>
+
+                        <li><a href="https://www.edcethiopia.org/index.php/en/news/publications" target="_blank">Publications</a>
+                        </li>
+                    </ul>
+                </li>
 
             </ul>
         </nav><!-- .nav-menu -->
@@ -119,9 +127,10 @@
                 <div class="col-lg-3 col-md-6 footer-links">
                     <h4>Useful Links</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="about.html">About us</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="contact.html">contact us</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('welcome') }}">Home</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('about') }}">About us</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('contact') }}">Contact us</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('dashboard_index') }}">Admins Only</a></li>
 
                     </ul>
                 </div>

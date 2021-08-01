@@ -20,7 +20,7 @@ class PagesController extends Controller
         $news = News::all(); // TODO: show only the last news for this part
         $startups = Startup::all();
         $partners = Partner::all();
-
+        // TODO: Send images to the front and display them
         return view('welcome', ['news' => $news, 'startups' => $startups, 'partners' => $partners]);
     }
 
@@ -61,6 +61,20 @@ class PagesController extends Controller
 
         return redirect()->back()->with('success');
     }
+
+
+    public function services()
+    {
+        return view('services');
+    }
+
+    public function news()
+    {
+        $news = News::all();
+
+        return view('news', ['news' => $news]);
+    }
+
     // TODO: include google maps on the about page
 }
 

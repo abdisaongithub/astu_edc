@@ -4,6 +4,45 @@
     Dashboard
 @endsection
 
+@section('messages')
+    @if(count($messages) > 0)
+
+
+        <li class="nav-item dropdown no-arrow mx-1">
+            <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link"
+                                                       aria-expanded="false" data-toggle="dropdown"
+                                                       href="#"><span
+                        class="badge badge-danger badge-counter">7</span><i
+                        class="fas fa-envelope fa-fw"></i></a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-list animated--grow-in">
+
+                    <h6 class="dropdown-header">Messages</h6>
+
+
+                    @foreach($messages as $message)
+                        <a
+                            class="dropdown-item d-flex align-items-center" href="#">
+                            <div class="dropdown-list-image mr-3"><img class="rounded-circle"
+                                                                       src="{{ asset('dashboard_assets/img/avatars/avatar4.jpeg') }}">
+                                <div class="bg-success status-indicator"></div>
+                            </div>
+                            <div class="font-weight-bold">
+                                <div class="text-truncate"><span>{{ $message->message }}</span></div>
+                                <p class="small text-gray-500 mb-0">{{ $message->email }}</p>
+                            </div>
+
+                        </a>
+                    @endforeach
+
+                </div>
+            </div>
+            <div class="shadow dropdown-list dropdown-menu dropdown-menu-right"
+                 aria-labelledby="alertsDropdown"></div>
+        </li>
+
+    @endif
+@endsection
+
 @section('content')
 
     <div id="wrapper">
@@ -135,63 +174,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-
+                    <div class="m-5 p-5">
                     </div>
-                    <div class="row">
-                        <div class="col-lg-6 mb-4">
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="text-primary font-weight-bold m-0">Projects</h6>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="small font-weight-bold">Server migration<span
-                                            class="float-right">20%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-danger" aria-valuenow="20" aria-valuemin="0"
-                                             aria-valuemax="100" style="width: 20%;"><span class="sr-only">20%</span>
-                                        </div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Sales tracking<span
-                                            class="float-right">40%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-warning" aria-valuenow="40" aria-valuemin="0"
-                                             aria-valuemax="100" style="width: 40%;"><span class="sr-only">40%</span>
-                                        </div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Customer Database<span
-                                            class="float-right">60%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-primary" aria-valuenow="60" aria-valuemin="0"
-                                             aria-valuemax="100" style="width: 60%;"><span class="sr-only">60%</span>
-                                        </div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Payout Details<span
-                                            class="float-right">80%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-info" aria-valuenow="80" aria-valuemin="0"
-                                             aria-valuemax="100" style="width: 80%;"><span class="sr-only">80%</span>
-                                        </div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Account setup<span
-                                            class="float-right">Complete!</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-success" aria-valuenow="100" aria-valuemin="0"
-                                             aria-valuemax="100" style="width: 100%;"><span class="sr-only">100%</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card shadow mb-4">
-                                <ul class="list-group list-group-flush"></ul>
-                            </div>
-                        </div>
+                    <div class="p-5">
                     </div>
+                    <a class="border rounded d-inline scroll-to-top" href="#page-top"><i
+                            class="fas fa-angle-up"></i></a>
                 </div>
-            </div>
-        </div>
-        <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
-    </div>
 
 @endsection
 
