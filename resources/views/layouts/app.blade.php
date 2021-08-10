@@ -8,6 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link rel="icon" href="{{ URL::asset('/img/logo.png') }}" type="image/x-icon"/>
 
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -37,7 +38,8 @@
     <div class="container">
 
         <div class="logo float-left">
-            <h1 class="text-light"><a href="{{ route('welcome') }}"><span>EDC</span></a></h1>
+            <h1 class="text-light">
+                <a href="{{ route('welcome') }}"><span><img src="{{ asset('img/logo.png') }}" class="img-fluid" />  ASTU-EDC</span></a></h1>
         </div>
 
         <nav class="nav-menu float-right d-none d-lg-block">
@@ -55,10 +57,11 @@
                     @endif
                 ><a href="{{ route('services') }}">Services</a></li>
                 <li
-                    @if(Route::is('startups'))
+                    @if(Route::is('startups') || Route::is('startup_detail'))
                     class="active"
                     @endif
                 ><a href="{{ route('startups') }}">Startups</a></li>
+
                 {{--                <li><a href="club.html">EIC Club</a></li>--}}
                 {{-- TODO: To be added after the completion of the club's website --}}
 
@@ -78,7 +81,13 @@
                     <li><a href="{{ route('dashboard_index') }}">Dashboard</a></li>
                 @endguest
 
-                <li class="drop-down"><a href="">News</a>
+                <li   @if(Route::is('news'))
+                      class="active drop-down"
+                      @else
+                      class="drop-down"
+                      @endif
+                ><a href="">News</a>
+
                     <ul>
                         <li><a href="{{ route('news') }}">Latest News</a></li>
 
@@ -130,7 +139,7 @@
                         <li><i class="bx bx-chevron-right"></i> <a href="{{ route('welcome') }}">Home</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="{{ route('about') }}">About us</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="{{ route('contact') }}">Contact us</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('dashboard_index') }}">Admins Only</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('dashboard_index') }}">Admins Area</a></li>
 
                     </ul>
                 </div>
@@ -150,11 +159,10 @@
                 <div class="col-lg-3 col-md-6 footer-contact">
                     <h4>Contact Us</h4>
                     <p>
-                        Bole, Adama Science And Technology University <br>
-                        Oromia, Adama<br>
-                        Ethiopia <br><br>
-                        <strong>Phone:</strong> <a href="tel:+251-22-211-1948"> +251-22-211-1948 </a> <br>
-                        <strong>Email:</strong> info@example.com<br>
+                        Adama Science and Technology University <br>
+                        Oromia, Adama, Ethiopia <br><br>
+                        <strong>Phone:</strong> <a href="tel:+251-22-211-1948" target="-_blank"> +251-22-211-1948 </a> <br>
+                        <strong>Email:</strong> <a href="mail:edc@astu.edu.et" target="_blank">edc@astu.edu.et</a><br>
                         {{--TODO: Replace email by email from edc domain--}}
                     </p>
                 </div>
@@ -175,6 +183,8 @@
                                 class="bx bxl-facebook"></i></a>
                         <a href="https://instagram.com/astu_edc?utm_medium=copy_link" target="_blank" class="instagram"><i
                                 class="bx bxl-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCXkzaEDbNGziaCpCIaInVPA" target="_blank" class="youtube"><i
+                                class="bx bxl-youtube"></i></a>
 
                     </div>
                 </div>

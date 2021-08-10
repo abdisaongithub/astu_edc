@@ -21,7 +21,7 @@
         <section class="portfolio">
             <div class="container">
 
-                @if($startups)
+                @if(count($startups) > 0)
                     <div class="row">
                         <div class="col-lg-12">
                             <ul id="portfolio-flters">

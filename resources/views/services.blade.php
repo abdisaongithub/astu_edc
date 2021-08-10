@@ -24,33 +24,33 @@
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto">
                     <p>
-                    <h2 class="section-heading">Services</h2><br/>
+{{--                    <h2 class="section-heading">Services</h2><br/>--}}
 
-                    <div class="t-2" >
-                        <ul style="list-style: none">
-                            <li><h5>Training</h5></li>
-                            <li><a href="#incubation"><h5>Incubation</h5></a></li>
-                            <li><h5>Coaching And Mentorship</h5></li>
-                            <li><a href="#fis"><h5>Female Innovative Support Program</h5></a></li>
-                        </ul>
-                    </div>
+{{--                    <div class="t-2" >--}}
+{{--                        <ul style="list-style: none">--}}
+{{--                            <li><h5>Training</h5></li>--}}
+{{--                            <li><a href="#incubation"><h5>Incubation</h5></a></li>--}}
+{{--                            <li><h5>Coaching And Mentorship</h5></li>--}}
+{{--                            <li><a href="#fis"><h5>Female Innovative Support Program</h5></a></li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
 
                     <div class="m-2">
-                        <h3>Trainings</h3>
+                        <h3>1. Training</h3>
                         <ul style="list-style: none">
                             <li><a href="#etw">Entrepreneurship Training Workshop (ETW)
                                 </a></li>
                             </a></li>
                             <li><a href="#yet">Youth Entrepreneurship Training (YET)</a></li>
-                            <li><a href="#canvas-workshop">Business model Canvas (BMC)</a></li>
+                            <li><a href="#canvas-workshop">Business model Canvas Workshop (BMC)</a></li>
                             <li><a href="#bussines-planning">Business Planning
                                 </a></li>
-                            <li><a href="#Holistic">Holistic Business Idea Developments training</a></li>
+                            <li><a href="#Holistic">Holistic Business Idea Developments Training</a></li>
                         </ul>
                     </div>
                     <br/>
                     <br/>
-                    <section id="etw">
+                    <section id="etw" class="py-2">
 
                         <h3> Entrepreneurship Training Workshop(ETW)</h3>
                         <h5>overview</h5>
@@ -69,7 +69,7 @@
                         </p>
 
                     </section>
-                    <section id="yet">
+                    <section id="yet" class="py-2">
                         <div class="h3">Youth Entrepreneurship Training (YET)</div>
                         <h5>overview</h5>
                         <p>The Youth Entrepreneurship Training (YET) is a two-day training program for youth who are
@@ -92,30 +92,8 @@
                             the 2-day training programme</p>
 
                     </section>
-                    <section id="Holistic">
-                        <h3>Holistic Business Idea Development
-                        </h3>
-                        <h5>overview</h5>
-                        <p>Holistic Business idea Development training is a 6-day training created to better understand
-                            about business ideas. This training will cover an about business ideas and to make them
-                            worthwhile based on a realistic concept and identify ways on how to go forward with the
-                            ideas. Additionally, this training will provide a first route into entrepreneurship in
-                            general and to create a more realistic picture about the life of an entrepreneur and how
-                            people can use their skills and interests to improve their chances by finding the right idea
-                            for them and become successful with it. The training is derived from GIZ Training designed
-                            Phillip Travers. It is also highly recommended for Higher Education instructors involved in
-                            business incubation and students who want to launch
-                            their own business.
-                        </p><br/>
-                        <p>In this workshop the participants will acquire knowledge and skills to build a solid base to
-                            determine which ideas for prototypes are valuable to go for, how to plan the development of
-                            the prototypes and how to illustrate and present the ideas to gain necessary support for
-                            realizing the prototypes.
-                        </p>
 
-
-                    </section>
-                    <section id="canvas-workshop">
+                    <section id="canvas-workshop" class="py-2">
                         <h3>Business Model Canvas Workshop</h3>
                         <h5>overview</h5>
                         <p>
@@ -129,14 +107,13 @@
                             customers, and finances. The 9 blocks include: customer segments, Value propositions,
                             channels, customer relationships, revenue streams, Key resources,
                             key activities, key partnerships and cost structure.</p><br/>
-                        <p><br/>
-                        <p>In this workshop, participants will acquire the knowledges and skills to apply the BMC to
-                            develop innovative business models of value creation or transform the current one.
+                        In this workshop, participants will acquire the knowledges and skills to apply the BMC to
+                        develop innovative business models of value creation or transform the current one.
                         </p>
 
                     </section>
 
-                    <section id="bussines-planning">
+                    <section id="bussines-planning"class="py-2">
                         <h3>Business Planning</h3>
                         <h5>overview</h5>
                         <p>In this training the students will develop a full business plan for their technology-based
@@ -152,8 +129,31 @@
                             and communicate a new business idea and planning.
                         </p>
                     </section>
-                    <section id="incubation">
-                        <h3>ASTU-INCUBATION PROGRAM</h3>
+                    <section id="Holistic" class="py-2">
+                        <h3>Holistic Business Idea Development
+                        </h3>
+                        <h5>overview</h5>
+                        <p>Holistic Business idea Development training is a 6-day training created to better understand
+                            about business ideas. This training will cover an about business ideas and to make them
+                            worthwhile based on a realistic concept and identify ways on how to go forward with the
+                            ideas. Additionally, this training will provide a first route into entrepreneurship in
+                            general and to create a more realistic picture about the life of an entrepreneur and how
+                            people can use their skills and interests to improve their chances by finding the right idea
+                            for them and become successful with it. The training is derived from GIZ Training designed
+                            Phillip Travers. It is also highly recommended for Higher Education instructors involved in
+                            business incubation and students who want to launch
+                            their own business.
+                        </p>
+                        <p>In this workshop the participants will acquire knowledge and skills to build a solid base to
+                            determine which ideas for prototypes are valuable to go for, how to plan the development of
+                            the prototypes and how to illustrate and present the ideas to gain necessary support for
+                            realizing the prototypes.
+                        </p>
+
+
+                    </section>
+                    <section id="incubation" class="py-2">
+                        <h3>2. ASTU-INCUBATION PROGRAM</h3>
                         <h5>overview</h5>
                         <p>ASTU-EDC also run incubation program. The program nurtures novice entrepreneurs at the
                             earliest stage of technological innovation, helps them implement their ideas by turning them
@@ -181,8 +181,8 @@
                             <li>Financial support for prototype development</li>
                         </ul>
                     </section>
-                    <section id="fis">
-                        <h3>Females Innovative Support Group</h3>
+                    <section id="fis" class="py-2">
+                        <h3>3. Females Innovative Support Group</h3>
                         <h5>overview</h5>
                         <p>FIS - Females Innovator Support Group is a community practice at Adama science and technology
                             University Entrepreneurship Development Center (EDC).
@@ -202,7 +202,13 @@
                             <li>Working or incubating space.</li>
                         </ul>
                     </section>
+                    <section id="coaching" class="py-2">
+                        <h3>4. Coaching and Mentorship</h3>
+                        <h5>overview</h5>
+                        <p>We provide business coaching and mentorship services for startup, micro and small enterprises, and individuals</p>
+                    </section>
                 </div>
+
 
             </div>
         </div>

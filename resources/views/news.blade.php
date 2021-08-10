@@ -18,6 +18,7 @@
         </div>
     </section>
 
+
     @if(count($news) > 0)
         <div class="container mb-5">
             <div class="row portfolio-container" data-aos="fade-up" data-aos-easing="ease-in-out"
@@ -27,6 +28,7 @@
                         <div class="card mt-5 shadow">
                             <img src="{{ Storage::url($n->image) }}" class="img-fluid" alt="">
                             <div class="card-header">
+
                                 <h4>{{ $n->title }}</h4>
                             </div>
                             <div class="card-body">

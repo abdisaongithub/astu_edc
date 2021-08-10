@@ -20,8 +20,9 @@ class PagesController extends Controller
         $news = News::all(); // TODO: show only the last news for this part
         $startups = Startup::all();
         $partners = Partner::all();
+        $startups_images = Image::all();
         // TODO: Send images to the front and display them
-        return view('welcome', ['news' => $news, 'startups' => $startups, 'partners' => $partners]);
+        return view('welcome', ['news' => $news, 'startups' => $startups, 'partners' => $partners, 'startups_images' => $startups_images]);
     }
 
     public function about()
@@ -62,7 +63,6 @@ class PagesController extends Controller
         return redirect()->back()->with('success');
     }
 
-
     public function services()
     {
         return view('services');
@@ -70,7 +70,7 @@ class PagesController extends Controller
 
     public function news()
     {
-        $news = News::all();
+        $news = News::paginate(10);
 
         return view('news', ['news' => $news]);
     }

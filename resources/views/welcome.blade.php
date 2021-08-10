@@ -125,8 +125,6 @@
                             <li><i class="icofont-check"></i><strong>Technology Commercialization
                                     assistance.</strong></i>
                             </li>
-
-
                         </ul>
                         </p>
 
@@ -184,7 +182,7 @@
 
                             <h4 class="title-news">{{ $news[0]->title}}</h4>
                             <p class="news-description"> {{ $news[0]->description }} </p>
-                            <a href="https://{{ $news[0]->link }}" target="_blank">see more?</a>
+                            <a href="{{ $news[0]->link }}" target="_blank">see more?</a>
                         </div>
                     </div>
                 </div>
@@ -204,9 +202,16 @@
                                 <div class="icon-box icon-box-cyan">
                                     <a href="{{ route('startup_detail', $startup->id) }}">
                                         {{-- TODO: make this route for the details of each startups--}}
-                                        <img class="card-img-top"
-                                             src="{{ $startup->image == null ? 'img/portfolio/portfolio-5.jpg' : Storage::url($startup->image) }}"
-                                             alt="">
+                                        @if(count($startups_images) > 0)
+                                            @foreach($startups_images as $image)
+                                                @if($image->startup_id == $startup->id)
+                                                    <img class="card-img-top"
+                                                         src="{{ Storage::url($image->image) }}"
+                                                         alt="">
+                                                    @break
+                                                @endif
+                                            @endforeach
+                                        @endif
                                     </a>
                                     <h4 class="title"><a href="{{ route('startup_detail', $startup->id) }}">{{ $startup->name }}</a>
                                     </h4>

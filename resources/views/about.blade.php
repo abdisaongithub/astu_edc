@@ -68,9 +68,7 @@
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title"><a href="#">Our Mission</a></h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor
-                                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                                <p class="card-text">The mission of ASTU-EDC is to create and develop technology and innovation-based businesses needed for developing industries and the society by providing the knowledge, support and technical services. The Center is meant to create entrepreneurship culture and develop entrepreneurship eco-system in the community to support the socio–economic development of the nation</p>
 
                             </div>
                         </div>
@@ -82,10 +80,13 @@
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title"><a href="#">Our Plan</a></h5>
-                                <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                    doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-                                    veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-
+                                <p class="card-text">
+                                    Commence annual based business plan competitions <br/>
+                                    Train and develop start-ups <br>
+                                    Provide technology-based business incubation related services to the community<br>
+                                    Build network; commercialize research ideas and innovations that are developed in the R&D facilities of the Universities<br>
+                                    Support local governments, MSEs and other actors in incubation related activities<br>
+                                    Improve the livelihood and survival rate of new firms by providing technical and business-related support<br>
                             </div>
                         </div>
 
@@ -93,13 +94,11 @@
                     <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
                         <div class="card">
                             <div class="card-img">
-                                <img src="{{ asset('img/service-details-3.jpg') }}" alt="...">
+                                <img src="{{ asset('img/hero-bg-1.jpg') }}" alt="...">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title"><a href="#">Our Vision</a></h5>
-                                <p class="card-text">Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit,
-                                    sed quia magni dolores eos qui ratione voluptatem sequi nesciunt Neque porro
-                                    quisquam est, qui dolorem ipsum quia dolor sit amet</p>
+                                <p class="card-text">To become one of the leading EDCs in Ethiopia, become top technology and business incubation Center, and renown in the region and nation wise by 2025 </p>
 
                             </div>
                         </div>
