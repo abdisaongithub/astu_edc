@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Storage;
 
 class TeamController extends Controller
 {
+    public function index()
+    {
+        $teams = Team::paginate(20);
+        return view('dashboard.team.index', ['teams' => $teams]);
+    }
+
     public function create()
     {
         return view('dashboard.team.create');

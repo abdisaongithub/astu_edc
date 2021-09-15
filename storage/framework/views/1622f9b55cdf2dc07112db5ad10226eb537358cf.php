@@ -1,14 +1,12 @@
-@extends('layouts.admin')
-
-@section('header')
+<?php $__env->startSection('header'); ?>
     Testimonials
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 
     <section class="contact-clean">
-        <form method="post" action="{{ route('testimonial_store') }}" enctype="multipart/form-data">
-            @csrf
+        <form method="post" action="<?php echo e(route('testimonial_store')); ?>" enctype="multipart/form-data">
+            <?php echo csrf_field(); ?>
             <h2 class="text-center">Add New Testimonial</h2><!-- Start: Success Example -->
             <div class="form-group"><input class="form-control" type="text" name="name"
                                            placeholder=" client Name"></div><!-- End: Success Example -->
@@ -31,4 +29,6 @@
             </div>
         </form>
     </section><!-- End: Contact Form Clean -->
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/abdi/dev/laravel/astu_edc/resources/views/dashboard/testimonial/create.blade.php ENDPATH**/ ?>

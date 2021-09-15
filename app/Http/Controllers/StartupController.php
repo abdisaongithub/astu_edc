@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\Storage;
 
 class StartupController extends Controller
 {
+    public function index()
+    {
+        $startups = Startup::paginate(20);
+        return view('dashboard.startup.index', ['startups' => $startups]);
+    }
+
     public function create()
     {
         return view('dashboard.startup.create');

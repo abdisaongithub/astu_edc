@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex justify-cntent-center align-items-center">
@@ -166,110 +164,112 @@
 
 
 
-        @if(count($news) > 0)
+        <?php if(count($news) > 0): ?>
             <div class="section-title">
                 <h2>Latest News</h2>
             </div>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 img-box bg-dark">
-                        <img src="{{ Storage::url($news->last()->image) }}" style="object-fit: cover;" class="img-fluid" alt="">
+                        <img src="<?php echo e(Storage::url($news->last()->image)); ?>" style="object-fit: cover;" class="img-fluid" alt="">
                     </div>
 
                     <div class="col-lg-6 d-flex flex-column justify-content-center p-5 bg-secondary">
 
                         <div class="icon-box">
 
-                            <h4 class="title-news">{{ $news->last()->title}}</h4>
-                            <p class="news-description"> {{ $news->last()->description }} </p>
-                            <a href="{{ $news->last()->link }}" target="_blank">see more?</a>
+                            <h4 class="title-news"><?php echo e($news->last()->title); ?></h4>
+                            <p class="news-description"> <?php echo e($news->last()->description); ?> </p>
+                            <a href="<?php echo e($news->last()->link); ?>" target="_blank">see more?</a>
 
                         </div>
                     </div>
                 </div>
 
             </div>
-        @endif
+        <?php endif; ?>
 
-        @if(count($startups) > 0)
+        <?php if(count($startups) > 0): ?>
             <section class="services">
                 <div class="container">
                     <div class="section-title">
                         <h2>Some Of Our Startups</h2>
                     </div>
                     <div class="row">
-                        @foreach($startups as $startup)
+                        <?php $__currentLoopData = $startups; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $startup): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="col-md-6 col-lg-4 d-flex align-items-stretch" data-aos="fade-up">
                                 <div class="icon-box icon-box-cyan">
-                                    <a href="{{ route('startup_detail', $startup->id) }}">
-                                        {{-- TODO: make this route for the details of each startups--}}
-                                        @if(count($startups_images) > 0)
-                                            @foreach($startups_images as $image)
-                                                @if($image->startup_id == $startup->id)
+                                    <a href="<?php echo e(route('startup_detail', $startup->id)); ?>">
+                                        
+                                        <?php if(count($startups_images) > 0): ?>
+                                            <?php $__currentLoopData = $startups_images; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $image): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <?php if($image->startup_id == $startup->id): ?>
                                                     <img class="card-img-top"
-                                                         src="{{ Storage::url($image->image) }}"
+                                                         src="<?php echo e(Storage::url($image->image)); ?>"
                                                          alt="">
-                                                    @break
-                                                @endif
-                                            @endforeach
-                                        @endif
+                                                    <?php break; ?>
+                                                <?php endif; ?>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        <?php endif; ?>
                                     </a>
-                                    <h4 class="title"><a href="{{ route('startup_detail', $startup->id) }}">{{ $startup->name }}</a>
+                                    <h4 class="title"><a href="<?php echo e(route('startup_detail', $startup->id)); ?>"><?php echo e($startup->name); ?></a>
                                     </h4>
-                                    {{-- TODO: make this route for the details of each startups--}}
+                                    
                                     <p class="description bg-light">
-                                        {{ $startup->description }}</br>
-                                        {{ $startup->email }} <br>
-                                        <a href="https://{{ $startup->website }}" target="_blank">Website &neArr;</a>
+                                        <?php echo e($startup->description); ?></br>
+                                        <?php echo e($startup->email); ?> <br>
+                                        <a href="https://<?php echo e($startup->website); ?>" target="_blank">Website &neArr;</a>
                                     </p>
-                                    @guest
-                                    @else
-                                        <a href="{{ route('startup_edit', $startup->id) }}"
+                                    <?php if(auth()->guard()->guest()): ?>
+                                    <?php else: ?>
+                                        <a href="<?php echo e(route('startup_edit', $startup->id)); ?>"
                                            class="btn btn-sm btn-outline-info mt-2">
                                             Edit
                                         </a>
-                                    @endif
+                                    <?php endif; ?>
                                 </div>
                             </div>
-                            @break($loop->index == 5)
-                        @endforeach
+                            <?php if($loop->index == 5) break; ?>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                     </div>
 
                 </div>
             </section><!-- End Services Section -->
             <!--dont forget partners section-->
-        @endif
+        <?php endif; ?>
 
-        @if(count($partners) > 0)
+        <?php if(count($partners) > 0): ?>
             <div class="section">
                 <div class="container">
                     <h3>Our Partners</h3>
                     <div class="row">
 
-                        @foreach($partners as $partner)
+                        <?php $__currentLoopData = $partners; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $partner): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="col-lg-2 mr-3">
-                                <img src="{{ Storage::url($partner->image) }}" class="testimonial-img" style="height: 200px;  width: 200px; object-fit: contain;"
-                                     alt="{{ $partner->description == null ? '' : $partner->description  }}"></br>
+                                <img src="<?php echo e(Storage::url($partner->image)); ?>" class="testimonial-img" style="height: 200px;  width: 200px; object-fit: contain;"
+                                     alt="<?php echo e($partner->description == null ? '' : $partner->description); ?>"></br>
 
-                                <a href="{{ $partner->link == null ? '#' : $partner->link }}" target="_blank"><h4
-                                        class="title">{{ $partner->name }}</h4></a>
-                                {{--                        TODO: Clearup where links are displayed and replace full links in database--}}
+                                <a href="<?php echo e($partner->link == null ? '#' : $partner->link); ?>" target="_blank"><h4
+                                        class="title"><?php echo e($partner->name); ?></h4></a>
+                                
 
-                                @guest
-                                @else
-                                    <a href="{{ route('partner_edit', $partner->id) }}"
+                                <?php if(auth()->guard()->guest()): ?>
+                                <?php else: ?>
+                                    <a href="<?php echo e(route('partner_edit', $partner->id)); ?>"
                                        class="btn btn-sm btn-outline-info my-2">
                                         Edit
                                     </a>
-                                @endif
+                                <?php endif; ?>
                             </div>
-                        @endforeach
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                     </div>
                 </div>
             </div>
-        @endif
+        <?php endif; ?>
     </main><!-- End #main -->
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/abdi/dev/laravel/astu_edc/resources/views/welcome.blade.php ENDPATH**/ ?>

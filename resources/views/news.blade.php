@@ -26,10 +26,11 @@
                 @foreach($news as $n)
                     <div class="col-lg-4 col-md-6 filter-app">
                         <div class="card mt-5 shadow">
-                            <img src="{{ Storage::url($n->image) }}" class="img-fluid" alt="">
+                            <img src="{{ Storage::url($n->image) }}" class="img-thumbnail" alt="">
                             <div class="card-header">
 
                                 <h4>{{ $n->title }}</h4>
+
                             </div>
                             <div class="card-body">
                                 <p class="description bg-light">{{ $n->description }}</p>

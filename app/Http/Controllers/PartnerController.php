@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Storage;
 
 class PartnerController extends Controller
 {
+    public function index()
+    {
+        $partners = Partner::paginate(20);
+        return view('dashboard.partner.index', ['partners' => $partners]);
+    }
+
+
     public function create()
     {
         return view('dashboard.partner.create');

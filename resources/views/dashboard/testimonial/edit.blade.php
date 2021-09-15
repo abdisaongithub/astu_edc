@@ -15,8 +15,10 @@
                 <div class="form-group"><input class="form-control" type="text" name="name" value="{{ $testimonial->name }}" placeholder=" client Name"></div><!-- End: Success Example -->
                 <!-- Start: Success Example -->
                 <div class="form-group">
-                    <!-- Start: Category --><input class="form-control" type="text" name="position" value="{{ $testimonial->position }}" placeholder="position"
-                                                   style="padding: 23px 12px;"><!-- End: Category -->
+                    <!-- Start: Category -->
+                    <input class="form-control" type="text" name="position" value="{{ $testimonial->position }}" placeholder="position"
+                                                   style="padding: 23px 12px;">
+                    <!-- End: Category -->
                 </div>
 
                 <div class="form-group">

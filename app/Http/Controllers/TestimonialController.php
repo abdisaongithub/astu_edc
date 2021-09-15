@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Storage;
 
 class TestimonialController extends Controller
 {
+    public function index()
+    {
+        $testimonials = Testimonial::paginate(20);
+        return view('dashboard.testimonial.index', ['testimonials' => $testimonials]);
+    }
+
     public function create()
     {
         return view('dashboard.testimonial.create');
@@ -20,7 +26,7 @@ class TestimonialController extends Controller
 
         $testimonial = new Testimonial($validated);
 
-        $path = Storage::disk('local')->put('public/', $request->file('image'));
+        $path = Storage::disk('local')->put('public/images/', $request->file('image'));
 
         $testimonial->image = $path;
 
@@ -28,7 +34,7 @@ class TestimonialController extends Controller
 
         $testimonial->save();
 
-        return redirect(route('dashboard_index'))->with('success', 'Testimonial Added Successfully');
+        return redirect(route('testimonial_index'))->with('success', 'Testimonial Added Successfully');
     }
 
     public function edit($id)
@@ -40,19 +46,30 @@ class TestimonialController extends Controller
     public function update(TestimonialRequest $request, $id)
     {
         $validated = $request->validated();
+
         $testimonial = Testimonial::findOrFail($id);
+
+//        dd($testimonial);
 
         $testimonial->name = $validated['name'];
         $testimonial->position = $validated['position'];
         $testimonial->testimonial = $validated['testimonial'];
 
-        $path = $request->file('image')->store('testimonials');
+        $path = Storage::disk('local')->put('public', $request->file('image'));
 
         $testimonial->image = $path;
 
         $testimonial->save();
 
-        return redirect(route('dashboard_index'))->with('success', 'Testimonial Updated Successfully');
+        return redirect(route('testimonial_index'))->with('success', 'Testimonial Updated Successfully');
 
+    }
+
+    public function destroy(Request $request, $id)
+    {
+        $testimonial = Testimonial::findOrFail($id);
+        Storage::delete($testimonial->image);
+        $testimonial->delete();
+        return redirect()->back()->with('success', 'Successfully Deleted Testimonial');
     }
 }
