@@ -29,7 +29,7 @@ class NewsController extends Controller
 
         $news->save();
 
-        return redirect(route('news_index'))->with('success');
+        return redirect(route('news_index'))->with('success', 'Nes Added Successfully');
     }
 
     public function edit($id)

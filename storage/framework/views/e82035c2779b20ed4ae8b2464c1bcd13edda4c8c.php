@@ -89,10 +89,12 @@
                                     Workshop(ETW):</strong></br>
                                 a 6 day intensive non-residential programme.This is a practical and hands-on programme.
                             </li>
-                            <li><i class="icofont-check"></i> <strong>Youth Entrepreneurship Training(YET):</strong></br>
+                            <li><i class="icofont-check"></i> <strong>Youth Entrepreneurship
+                                    Training(YET):</strong></br>
                                 a 2-day self-impoloyment and atitude development training programme for students.
                             </li>
-                            <li><i class="icofont-check"></i> <strong>Women Entrepreneurship Training(WET):</strong></br>
+                            <li><i class="icofont-check"></i> <strong>Women Entrepreneurship
+                                    Training(WET):</strong></br>
                                 a 2-day training which addresses the needs of female students and women enterpreneurs.
                             </li>
                             <li><i class="icofont-check"></i> <strong>Holistic Business Idea Development:</strong></br>
@@ -163,7 +165,6 @@
         <section class="latest"></section>
 
 
-
         <?php if(count($news) > 0): ?>
             <div class="section-title">
                 <h2>Latest News</h2>
@@ -171,7 +172,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 img-box bg-dark">
-                        <img src="<?php echo e(Storage::url($news->last()->image)); ?>" style="object-fit: cover;" class="img-fluid" alt="">
+                        <img src="<?php echo e(Storage::url($news->last()->image)); ?>" style="object-fit: cover;" class="img-fluid"
+                             alt="">
                     </div>
 
                     <div class="col-lg-6 d-flex flex-column justify-content-center p-5 bg-secondary">
@@ -205,20 +207,19 @@
                                             <?php $__currentLoopData = $startups_images; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $image): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <?php if($image->startup_id == $startup->id): ?>
                                                     <img class="card-img-top"
-                                                         src="<?php echo e(Storage::url($image->image)); ?>"
-                                                         alt="">
+                                                         src="<?php echo e(Storage::url($image->image)); ?>">
                                                     <?php break; ?>
                                                 <?php endif; ?>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         <?php endif; ?>
                                     </a>
-                                    <h4 class="title"><a href="<?php echo e(route('startup_detail', $startup->id)); ?>"><?php echo e($startup->name); ?></a>
+                                    <h4 class="title"><a
+                                            href="<?php echo e(route('startup_detail', $startup->id)); ?>"><?php echo e($startup->name); ?></a>
                                     </h4>
-                                    
-                                    <p class="description bg-light">
-                                        <?php echo e($startup->description); ?></br>
-                                        <?php echo e($startup->email); ?> <br>
-                                        <a href="https://<?php echo e($startup->website); ?>" target="_blank">Website &neArr;</a>
+                                    <?php echo e($startup->email); ?>
+
+                                    <br>
+                                    <a href="https://<?php echo e($startup->website); ?>" target="_blank">Website &neArr;</a>
                                     </p>
                                     <?php if(auth()->guard()->guest()): ?>
                                     <?php else: ?>
@@ -239,6 +240,44 @@
             <!--dont forget partners section-->
         <?php endif; ?>
 
+        <?php if($mentors): ?>
+        <!-- ======= Tetstimonials Section ======= -->
+            <section class="testimonials" data-aos="fade-up">
+                <div class="container">
+
+                    <div class="section-title">
+                        <h2>Mentors</h2>
+                    </div>
+
+                    <div class="owl-carousel testimonials-carousel">
+                        <?php $__currentLoopData = $mentors; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mentor): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <div class="testimonial-item">
+                                <img src="<?php echo e(Storage::url($mentor->image)); ?>" class="testimonial-img" alt="">
+                                <h3><?php echo e($mentor->name); ?></h3>
+                                <h4><?php echo e($mentor->position); ?></h4>
+                                <h5><?php echo e($mentor->rank); ?></h5>
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    <?php echo e($mentor->title); ?>
+
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                                <?php if(auth()->guard()->guest()): ?>
+                                <?php else: ?>
+                                    <a href="<?php echo e(route('mentor_edit', $mentor->id)); ?>"
+                                       class="btn btn-sm btn-outline-info mt-2">
+                                        Edit
+                                    </a>
+                                <?php endif; ?>
+                            </div>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                    </div>
+
+                </div>
+            </section><!-- End Ttstimonials Section -->
+        <?php endif; ?>
+
         <?php if(count($partners) > 0): ?>
             <div class="section">
                 <div class="container">
@@ -247,8 +286,9 @@
 
                         <?php $__currentLoopData = $partners; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $partner): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="col-lg-2 mr-3">
-                                <img src="<?php echo e(Storage::url($partner->image)); ?>" class="testimonial-img p-2" style="height: 200px;  width: 200px; object-fit: contain;"
-                                     >
+                                <img src="<?php echo e(Storage::url($partner->image)); ?>" class="testimonial-img p-2"
+                                     style="height: 200px;  width: 200px; object-fit: contain;"
+                                >
                                 </br>
 
                                 <a href="<?php echo e($partner->link == null ? '#' : $partner->link); ?>" target="_blank"><h4

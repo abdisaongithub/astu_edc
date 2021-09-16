@@ -147,12 +147,12 @@
                 <div class="col-lg-3 col-md-6 footer-links">
                     <h4>Our Services</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Business and entraprenurship training</a>
+                        <li><i class="bx bx-chevron-right"></i> <a href="<?php echo e(route('services')); ?>">Business and Entrepreneurship training</a>
                         </li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Holistic Business Idea Development</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Business Incubation</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Access to funding for startups</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Access to resources for startups</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="<?php echo e(route('services')); ?>">Holistic Business Idea Development</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="<?php echo e(route('services')); ?>">Business Incubation</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="<?php echo e(route('services')); ?>">Access to funding for startups</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="<?php echo e(route('services')); ?>">Access to resources for startups</a></li>
                     </ul>
                 </div>
 

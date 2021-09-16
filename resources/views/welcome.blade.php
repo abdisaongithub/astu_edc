@@ -91,10 +91,12 @@
                                     Workshop(ETW):</strong></br>
                                 a 6 day intensive non-residential programme.This is a practical and hands-on programme.
                             </li>
-                            <li><i class="icofont-check"></i> <strong>Youth Entrepreneurship Training(YET):</strong></br>
+                            <li><i class="icofont-check"></i> <strong>Youth Entrepreneurship
+                                    Training(YET):</strong></br>
                                 a 2-day self-impoloyment and atitude development training programme for students.
                             </li>
-                            <li><i class="icofont-check"></i> <strong>Women Entrepreneurship Training(WET):</strong></br>
+                            <li><i class="icofont-check"></i> <strong>Women Entrepreneurship
+                                    Training(WET):</strong></br>
                                 a 2-day training which addresses the needs of female students and women enterpreneurs.
                             </li>
                             <li><i class="icofont-check"></i> <strong>Holistic Business Idea Development:</strong></br>
@@ -165,7 +167,6 @@
         <section class="latest"></section>
 
 
-
         @if(count($news) > 0)
             <div class="section-title">
                 <h2>Latest News</h2>
@@ -173,7 +174,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 img-box bg-dark">
-                        <img src="{{ Storage::url($news->last()->image) }}" style="object-fit: cover;" class="img-fluid" alt="">
+                        <img src="{{ Storage::url($news->last()->image) }}" style="object-fit: cover;" class="img-fluid"
+                             alt="">
                     </div>
 
                     <div class="col-lg-6 d-flex flex-column justify-content-center p-5 bg-secondary">
@@ -207,20 +209,18 @@
                                             @foreach($startups_images as $image)
                                                 @if($image->startup_id == $startup->id)
                                                     <img class="card-img-top"
-                                                         src="{{ Storage::url($image->image) }}"
-                                                         alt="">
+                                                         src="{{ Storage::url($image->image) }}">
                                                     @break
                                                 @endif
                                             @endforeach
                                         @endif
                                     </a>
-                                    <h4 class="title"><a href="{{ route('startup_detail', $startup->id) }}">{{ $startup->name }}</a>
+                                    <h4 class="title"><a
+                                            href="{{ route('startup_detail', $startup->id) }}">{{ $startup->name }}</a>
                                     </h4>
-                                    {{-- TODO: make this route for the details of each startups--}}
-                                    <p class="description bg-light">
-                                        {{ $startup->description }}</br>
-                                        {{ $startup->email }} <br>
-                                        <a href="https://{{ $startup->website }}" target="_blank">Website &neArr;</a>
+                                    {{ $startup->email }}
+                                    <br>
+                                    <a href="https://{{ $startup->website }}" target="_blank">Website &neArr;</a>
                                     </p>
                                     @guest
                                     @else
@@ -241,6 +241,43 @@
             <!--dont forget partners section-->
         @endif
 
+        @if($mentors)
+        <!-- ======= Tetstimonials Section ======= -->
+            <section class="testimonials" data-aos="fade-up">
+                <div class="container">
+
+                    <div class="section-title">
+                        <h2>Mentors</h2>
+                    </div>
+
+                    <div class="owl-carousel testimonials-carousel">
+                        @foreach($mentors as $mentor)
+                            <div class="testimonial-item">
+                                <img src="{{ Storage::url($mentor->image) }}" class="testimonial-img" alt="">
+                                <h3>{{ $mentor->name }}</h3>
+                                <h4>{{ $mentor->position }}</h4>
+                                <h5>{{ $mentor->rank }}</h5>
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    {{ $mentor->title }}
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                                @guest
+                                @else
+                                    <a href="{{ route('mentor_edit', $mentor->id) }}"
+                                       class="btn btn-sm btn-outline-info mt-2">
+                                        Edit
+                                    </a>
+                                @endif
+                            </div>
+                        @endforeach
+
+                    </div>
+
+                </div>
+            </section><!-- End Ttstimonials Section -->
+        @endif
+
         @if(count($partners) > 0)
             <div class="section">
                 <div class="container">
@@ -249,8 +286,9 @@
 
                         @foreach($partners as $partner)
                             <div class="col-lg-2 mr-3">
-                                <img src="{{ Storage::url($partner->image) }}" class="testimonial-img p-2" style="height: 200px;  width: 200px; object-fit: contain;"
-                                     >
+                                <img src="{{ Storage::url($partner->image) }}" class="testimonial-img p-2"
+                                     style="height: 200px;  width: 200px; object-fit: contain;"
+                                >
                                 </br>
 
                                 <a href="{{ $partner->link == null ? '#' : $partner->link }}" target="_blank"><h4

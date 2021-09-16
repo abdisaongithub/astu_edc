@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="<?php echo e(asset('dashboard_assets/css/styles.min.css')); ?>">
 
     <?php echo $__env->yieldContent('headers'); ?>
+
 </head>
 
 <body id="page-top">
@@ -38,6 +39,7 @@
                             class="fas fa-user-circle"></i><span>Testimonials</span></a>
                     <a class="nav-link" href="<?php echo e(route('team_index')); ?>"><i class="fas fa-user-circle"></i><span>Team Members</span></a>
                     <a class="nav-link" href="<?php echo e(route('partner_index')); ?>"><i class="fas fa-user-circle"></i><span>Partners</span></a>
+                    <a class="nav-link" href="<?php echo e(route('mentor_index')); ?>"><i class="fas fa-user-circle"></i><span>Mentors</span></a>
                 </li>
             </ul>
             <div class="text-center d-none d-md-inline">
@@ -99,14 +101,8 @@
                 </div>
             </nav>
 
-            <?php if(count($errors) > 0): ?>
-                <?php echo e($errors); ?>
-
-            <?php endif; ?>
-
-            
-
             <?php echo $__env->yieldContent('content'); ?>
+
         </div>
 
         <footer class="bg-white sticky-footer">
@@ -114,6 +110,7 @@
                 <div class="text-center my-auto copyright"><span>Copyright © K.S.S 2021</span></div>
             </div>
         </footer>
+
     </div>
     <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
 </div>

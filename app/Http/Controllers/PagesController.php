@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\MessageRequest;
 use App\Models\Image;
+use App\Models\Mentor;
 use App\Models\Message;
 use App\Models\News;
 use App\Models\Partner;
@@ -21,8 +22,9 @@ class PagesController extends Controller
         $startups = Startup::all();
         $partners = Partner::all();
         $startups_images = Image::all();
+        $mentors = Mentor::all();
         // TODO: Send images to the front and display them
-        return view('welcome', ['news' => $news, 'startups' => $startups, 'partners' => $partners, 'startups_images' => $startups_images]);
+        return view('welcome', ['news' => $news, 'startups' => $startups, 'partners' => $partners, 'startups_images' => $startups_images, 'mentors' => $mentors]);
     }
 
     public function about()

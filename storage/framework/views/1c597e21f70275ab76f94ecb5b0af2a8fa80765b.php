@@ -16,7 +16,6 @@
 
                     <h6 class="dropdown-header">Messages</h6>
 
-
                     <?php $__currentLoopData = $messages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $message): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <a
                             class="dropdown-item d-flex align-items-center" href="#">

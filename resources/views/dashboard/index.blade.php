@@ -18,7 +18,6 @@
 
                     <h6 class="dropdown-header">Messages</h6>
 
-
                     @foreach($messages as $message)
                         <a
                             class="dropdown-item d-flex align-items-center" href="#">

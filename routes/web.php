@@ -58,6 +58,11 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function (){
     Route::put('/startup/update/{id}', 'StartupController@update')->name('startup_update');
     Route::delete('/startup/delete/{id}', 'StartupController@destroy')->name('startup_destroy');
 
+    Route::get('/mentor', 'MentorController@index')->name('mentor_index');
+    Route::get('/mentor/create', 'MentorController@create')->name('mentor_create');
+    Route::post('/mentor/store', 'MentorController@store')->name('mentor_store');
+    Route::get('/mentor/edit/{id}', 'MentorController@edit')->name('mentor_edit');
+    Route::put('/mentor/update/{id}', 'MentorController@update')->name('mentor_update');
+    Route::delete('/mentor/delete/{id}', 'MentorController@destroy')->name('mentor_destroy');
 
 });
-

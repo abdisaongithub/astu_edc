@@ -39,6 +39,7 @@
                             class="fas fa-user-circle"></i><span>Testimonials</span></a>
                     <a class="nav-link" href="{{ route('team_index') }}"><i class="fas fa-user-circle"></i><span>Team Members</span></a>
                     <a class="nav-link" href="{{ route('partner_index') }}"><i class="fas fa-user-circle"></i><span>Partners</span></a>
+                    <a class="nav-link" href="{{ route('mentor_index') }}"><i class="fas fa-user-circle"></i><span>Mentors</span></a>
                 </li>
             </ul>
             <div class="text-center d-none d-md-inline">
