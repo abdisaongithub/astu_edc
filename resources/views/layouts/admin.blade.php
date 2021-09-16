@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ asset('dashboard_assets/css/styles.min.css') }}">
 
     @yield('headers')
+
 </head>
 
 <body id="page-top">
@@ -99,13 +100,8 @@
                 </div>
             </nav>
 
-            @if(count($errors) > 0)
-                {{ $errors }}
-            @endif
-
-            {{--            TODO: Use this code to get to the errors--}}
-
             @yield('content')
+
         </div>
 
         <footer class="bg-white sticky-footer">
@@ -113,6 +109,7 @@
                 <div class="text-center my-auto copyright"><span>Copyright © K.S.S 2021</span></div>
             </div>
         </footer>
+
     </div>
     <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
 </div>

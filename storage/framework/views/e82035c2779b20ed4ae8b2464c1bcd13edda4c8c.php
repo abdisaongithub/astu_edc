@@ -247,8 +247,9 @@
 
                         <?php $__currentLoopData = $partners; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $partner): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="col-lg-2 mr-3">
-                                <img src="<?php echo e(Storage::url($partner->image)); ?>" class="testimonial-img" style="height: 200px;  width: 200px; object-fit: contain;"
-                                     alt="<?php echo e($partner->description == null ? '' : $partner->description); ?>"></br>
+                                <img src="<?php echo e(Storage::url($partner->image)); ?>" class="testimonial-img p-2" style="height: 200px;  width: 200px; object-fit: contain;"
+                                     >
+                                </br>
 
                                 <a href="<?php echo e($partner->link == null ? '#' : $partner->link); ?>" target="_blank"><h4
                                         class="title"><?php echo e($partner->name); ?></h4></a>

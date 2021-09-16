@@ -29,7 +29,7 @@
 
                 @foreach($testimonials as $testimonial)
                     <tr>
-                        <th scope="row">1</th>
+                        <th scope="row">{{ $loop->iteration }}</th>
                         <td>{{ $testimonial->name }}</td>
                         <td>{{ $testimonial->position }}</td>
                         <td>

@@ -30,7 +30,7 @@
                         @if($images)
                             <div class="owl-carousel portfolio-details-carousel">
                                 @foreach($images as $image)
-                                    <img src="{{ Storage::url($image->image) }}"  class="img-fluid" alt="">
+                                    <img src="{{ Storage::url($image->image) }}"  class="img-fluid" style="height: 600px; object-fit: contain;" alt="">
                                 @endforeach
                             </div>
                         @endif

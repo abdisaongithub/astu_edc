@@ -38,7 +38,7 @@
                                     <?php if($images): ?>
                                         <?php $__currentLoopData = $images; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $image): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>{
                                             <?php if($image->startup_id == $startup->id): ?>
-                                                <img src="<?php echo e(Storage::url($image->image)); ?>" class="img-fluid" alt="">
+                                                <img src="<?php echo e(Storage::url($image->image)); ?>" class="img-fluid" style="height: 200px; object-fit: contain" alt="">
                                                 <?php break; ?>
                                             <?php endif; ?>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

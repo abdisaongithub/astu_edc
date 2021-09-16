@@ -29,9 +29,41 @@ class NewsController extends Controller
 
         $news->save();
 
-        return redirect(route('dashboard_index'))->with('success');
+        return redirect(route('news_index'))->with('success');
     }
 
-    // TODO prepare editing place for news
+    public function edit($id)
+    {
+        $news = News::findOrFail($id);
+        return view('dashboard.news.edit', ['news' => $news]);
+    }
+
+    public function update(NewsRequest $request, $id)
+    {
+        $validated = $request->validated();
+
+        $news = News::findOrFail($id);
+
+        $news->title = $validated['title'];
+        $news->description = $validated['description'];
+        $news->link = $validated['link'];
+
+        if (isset($request->image)){
+            Storage::delete($news->image);
+            $news->image = Storage::put('public', $request->file('image'));
+        }
+
+        $news->save();
+
+        return redirect(route('news_index'))->with('success', 'Successfully Updated News');
+    }
+
+    public function destroy($id)
+    {
+        $news = News::findOrFail($id);
+
+        $news->delete();
+        return redirect()->back()->with('success', 'Successfully Deleted News');
+    }
 
 }

@@ -107,7 +107,7 @@
             </div>
         </section><!-- End Service Details Section -->
 
-        <?php if($teams): ?>
+        <?php if(count($teams) > 0): ?>
             <section class="team">
                 <div class="container">
                     <h3>Our Team</h3>
@@ -117,14 +117,14 @@
                             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                                 <div class="member">
                                     <div class="member-img">
-                                        <img src="<?php echo e(Storage::url($team->image)); ?>" class="img-fluid" alt="">
-                                        <div class="social">
+                                        <img src="<?php echo e(Storage::url($team->image)); ?>" class="img-fluid" style="height: 200px;  width: 200px; object-fit: contain;" alt="">
 
-                                            <a href=""><i class="icofont-twitter"></i></a>
-                                            <a href=""><i class="icofont-facebook"></i></a>
-                                            <a href=""><i class="icofont-telegram"></i></a>
 
-                                        </div>
+
+
+
+
+
                                     </div>
                                     <div class="member-info">
                                         <h4><?php echo e($team->name); ?></h4>

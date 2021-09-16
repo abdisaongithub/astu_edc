@@ -1,11 +1,14 @@
 @extends('layouts.admin')
 
+@section('header')
+    Startup
+@endsection
+
 @section('content')
-    {{ $startup }}
     @if($startup)
     <section class="contact-clean">
-        <form method="post" action="{{ route('startup_update', $startup->id) }}">
-            <input type="hidden" name="_method" value="put">
+        <form method="post" action="{{ route('startup_update', $startup->id) }}" enctype="multipart/form-data">
+            @method('put')
             @csrf
             <h2 class="text-center">Edit Startup</h2><!-- Start: Success Example -->
             <div class="row">
@@ -42,16 +45,16 @@
 
             <div class="form-group">
                 <h6>Description</h6>
-                <textarea class="form-control"  name="description" placeholder="Description in Detail" rows="14" style="padding: 23px 12px; margin-bottom: 10px;">{{ $startup->description }}</textarea>
-                <h4>Add some photos for the startup</h4>
+                <textarea class="form-control p-2"  name="description" placeholder="Description in Detail" rows="14" style="padding: 23px 12px; margin-bottom: 10px;">{{ $startup->description }}</textarea>
+                <h4>Edit photos for the startup</h4>
                 <div class="row">
                     <div class="col-lg-6">
-                        <input class="form-control-file mb-2" type="file">
-                        <input class="form-control-file mb-2" type="file">
+                        <input class="form-control-file mb-2" name="image_1" type="file">
+                        <input class="form-control-file mb-2" name="image_2" type="file">
                     </div>
                     <div class="col-lg-6">
-                        <input class="form-control-file mb-2" type="file">
-                        <input class="form-control-file mb-2" type="file">
+                        <input class="form-control-file mb-2" name="image_3" type="file">
+                        <input class="form-control-file mb-2" name="image_4" type="file">
                     </div>
                 </div>
             </div>
@@ -59,8 +62,4 @@
         </form>
     </section>
     @endif
-@endsection
-
-@section('header')
-    Startup
 @endsection

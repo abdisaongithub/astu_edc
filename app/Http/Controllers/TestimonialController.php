@@ -26,7 +26,7 @@ class TestimonialController extends Controller
 
         $testimonial = new Testimonial($validated);
 
-        $path = Storage::disk('local')->put('public/images/', $request->file('image'));
+        $path = Storage::put('public/', $request->file('image'));
 
         $testimonial->image = $path;
 
@@ -49,14 +49,18 @@ class TestimonialController extends Controller
 
         $testimonial = Testimonial::findOrFail($id);
 
-//        dd($testimonial);
+//        dd($request);
 
         $testimonial->name = $validated['name'];
         $testimonial->position = $validated['position'];
         $testimonial->testimonial = $validated['testimonial'];
 
-        $path = Storage::disk('local')->put('public', $request->file('image'));
+        if (isset($request->image)){
+            Storage::delete($testimonial->image);
+        }
 
+
+        $path = Storage::put('public/', $request->file('image'));
         $testimonial->image = $path;
 
         $testimonial->save();

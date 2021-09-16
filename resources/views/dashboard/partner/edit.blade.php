@@ -3,7 +3,7 @@
 @section('content')
     @if($partner)
         <section class="contact-clean">
-            <form method="post" action="{{ route('partner_update', $partner->id) }}">
+            <form method="post" action="{{ route('partner_update', $partner->id) }}" enctype="multipart/form-data">
                 @csrf
                 @method('put')
                 <h2 class="text-center">Edit Partner</h2><!-- Start: Success Example -->
@@ -22,7 +22,7 @@
                     <input class="form-control-file" type="file" name="image">
 
                 </div>
-                <div class="form-group"><button class="btn btn-primary" type="submit">ADD</button></div>
+                <div class="form-group"><button class="btn btn-primary" type="submit">Update</button></div>
             </form>
         </section>
     @endif

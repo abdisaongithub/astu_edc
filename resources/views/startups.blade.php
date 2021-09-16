@@ -40,7 +40,7 @@
                                     @if($images)
                                         @foreach($images as $image){
                                             @if($image->startup_id == $startup->id)
-                                                <img src="{{ Storage::url($image->image) }}" class="img-fluid" alt="">
+                                                <img src="{{ Storage::url($image->image) }}" class="img-fluid" style="height: 200px; object-fit: contain" alt="">
                                                 @break
                                             @endif
                                         @endforeach

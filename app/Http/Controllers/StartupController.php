@@ -70,7 +70,7 @@ class StartupController extends Controller
             $image4->save();
         }
 
-        return redirect(route('dashboard_index'))->with('success', 'Startup Created Successfully');
+        return redirect(route('startup_index'))->with('success', 'Startup Created Successfully');
     }
 
     public function edit($id)
@@ -95,45 +95,59 @@ class StartupController extends Controller
         $startup->website = $validated['website'];
         $startup->location = $validated['location'];
 
+
         $startup->save();
 
-//
-//        if ($request->image_1){
-//            $path_1 = Storage::disk('local')->put('public/', $request->file('image_1'));
-//            $image1 = new Image([
-//                'startup_id' => $startup->id,
-//                'image' => $path_1
-//            ]);
-//            $image1->save();
-//        }
-//        if ($request->image_2){
-//            $path_2 = Storage::disk('local')->put('public/', $request->file('image_2'));
-//            $image2 = new Image([
-//                'startup_id' => $startup->id,
-//                'image' => $path_2
-//            ]);
-//            $image2->save();
-//        }
-//        if ($request->image_3){
-//            $path_3 = Storage::disk('local')->put('public/', $request->file('image_3'));
-//            $image3 = new Image([
-//                'startup_id' => $startup->id,
-//                'image' => $path_3
-//            ]);
-//            $image3->save();
-//        }
-//        if ($request->image_4){
-//            $path_4 = Storage::disk('local')->put('public/', $request->file('image_4'));
-//            $image4 = new Image([
-//                'startup_id' => $startup->id,
-//                'image' => $path_4
-//            ]);
-//            $image4->save();
-//        }
+        if (isset($request->image_1) || isset($request->image_2) || isset($request->image_3) || isset($request->image_4)){
+            $images = Image::where('startup_id', $startup->id)->get();
+            foreach ($images as $image){
+                $image->delete();
+            }
+        }
 
-        return redirect(route('dashboard_index'))->with('success', 'Startup Updated Successfully');
+
+        if (isset($request->image_1)){
+            $path_1 = Storage::put('public/', $request->file('image_1'));
+            $image1 = new Image([
+                'startup_id' => $startup->id,
+                'image' => $path_1
+            ]);
+            $image1->save();
+        }
+        if (isset($request->image_2)){
+            $path_2 = Storage::put('public/', $request->file('image_2'));
+            $image2 = new Image([
+                'startup_id' => $startup->id,
+                'image' => $path_2
+            ]);
+            $image2->save();
+        }
+        if (isset($request->image_3)){
+            $path_3 = Storage::put('public/', $request->file('image_3'));
+            $image3 = new Image([
+                'startup_id' => $startup->id,
+                'image' => $path_3
+            ]);
+            $image3->save();
+        }
+        if (isset($request->image_4)){
+            $path_4 = Storage::put('public/', $request->file('image_4'));
+            $image4 = new Image([
+                'startup_id' => $startup->id,
+                'image' => $path_4
+            ]);
+            $image4->save();
+        }
+
+
+        return redirect(route('startup_index'))->with('success', 'Startup Updated Successfully');
 
     }
-}
 
-// TODO: change all redirects to dashboard with flash messages
+    public function destroy($id)
+    {
+        $startup = Startup::findOrFail($id);
+        $startup->delete();
+        return redirect()->back()->with('success', 'Startup Deleted Successfully');
+    }
+}

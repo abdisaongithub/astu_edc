@@ -4,7 +4,7 @@
 <?php $__env->startSection('content'); ?>
     <?php if($team): ?>
         <section class="contact-clean">
-            <form method="post" action="<?php echo e(route('team_update', $team->id)); ?>">
+            <form method="post" action="<?php echo e(route('team_update', $team->id)); ?>" enctype="multipart/form-data">
                 <?php echo method_field('put'); ?>
                 <?php echo csrf_field(); ?>
                 <h2 class="text-center">Edit Team Member</h2><!-- Start: Success Example -->

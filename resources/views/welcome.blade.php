@@ -249,8 +249,9 @@
 
                         @foreach($partners as $partner)
                             <div class="col-lg-2 mr-3">
-                                <img src="{{ Storage::url($partner->image) }}" class="testimonial-img" style="height: 200px;  width: 200px; object-fit: contain;"
-                                     alt="{{ $partner->description == null ? '' : $partner->description  }}"></br>
+                                <img src="{{ Storage::url($partner->image) }}" class="testimonial-img p-2" style="height: 200px;  width: 200px; object-fit: contain;"
+                                     >
+                                </br>
 
                                 <a href="{{ $partner->link == null ? '#' : $partner->link }}" target="_blank"><h4
                                         class="title">{{ $partner->name }}</h4></a>

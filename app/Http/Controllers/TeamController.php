@@ -30,7 +30,7 @@ class TeamController extends Controller
 
         $team->save();
 
-        return redirect(route('dashboard_index'))->with('success', 'Team Added Successfully');
+        return redirect(route('team_index'))->with('success', 'Team Added Successfully');
     }
 
     public function edit($id)
@@ -47,8 +47,21 @@ class TeamController extends Controller
         $team->name = $validated['name'];
         $team->position = $validated['position'];
 
+        if (isset($request->image)){
+            Storage::delete($team->image);
+            $team->image = Storage::put('public/', $request->file('image'));
+        }
+
         $team->save();
 
-        return redirect(route('dashboard_index'))->with('success', 'Team Updated Successfully');
+        return redirect(route('team_index'))->with('success', 'Team Updated Successfully');
+    }
+
+    public function destroy($id)
+    {
+        $team = Team::findOrFail($id);
+        Storage::delete($team->image);
+        $team->delete();
+        return redirect()->back()->with('success', 'Successfully Deleted Team Member');
     }
 }

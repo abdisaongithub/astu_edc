@@ -6,7 +6,7 @@
     <?php if($testimonial): ?>
 
         <section class="contact-clean">
-            <form method="post" action="<?php echo e(route('testimonial_update', $testimonial->id)); ?>">
+            <form method="post" action="<?php echo e(route('testimonial_update', $testimonial->id)); ?>" enctype="multipart/form-data">
                 <?php echo method_field('put'); ?>
                 <?php echo csrf_field(); ?>
                 <h2 class="text-center">Edit Testimonial</h2><!-- Start: Success Example -->

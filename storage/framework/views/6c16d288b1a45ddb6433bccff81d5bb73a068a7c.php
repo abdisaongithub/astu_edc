@@ -27,7 +27,7 @@
 
                 <?php $__currentLoopData = $testimonials; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $testimonial): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr>
-                        <th scope="row">1</th>
+                        <th scope="row"><?php echo e($loop->iteration); ?></th>
                         <td><?php echo e($testimonial->name); ?></td>
                         <td><?php echo e($testimonial->position); ?></td>
                         <td>

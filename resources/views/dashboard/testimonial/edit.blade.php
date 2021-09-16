@@ -8,7 +8,7 @@
     @if($testimonial)
 
         <section class="contact-clean">
-            <form method="post" action="{{ route('testimonial_update', $testimonial->id) }}">
+            <form method="post" action="{{ route('testimonial_update', $testimonial->id) }}" enctype="multipart/form-data">
                 @method('put')
                 @csrf
                 <h2 class="text-center">Edit Testimonial</h2><!-- Start: Success Example -->

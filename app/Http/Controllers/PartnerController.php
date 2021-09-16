@@ -31,7 +31,7 @@ class PartnerController extends Controller
         $partner->description = 'Description not provided';
         $partner->save();
 
-        return redirect(route('dashboard_index'))->with('success', 'Partner Added Successfully');
+        return redirect(route('partner_index'))->with('success', 'Partner Added Successfully');
     }
 
     public function edit($id)
@@ -45,13 +45,25 @@ class PartnerController extends Controller
         $validated = $request->validated();
 
         $partner = Partner::findOrFail($id);
-        $partner->image = 'http://localhost:8000/img/team/team-1.jpg';
         $partner->description = 'Description not provided';
         $partner->name = $validated['name'];
         $partner->link = $validated['link'];
+
+        if (isset($request->image)){
+            Storage::delete($partner->image);
+            $partner->image = Storage::put('public/', $request->file('image'));
+        }
+
         $partner->save();
 
-        return redirect(route('dashboard_index'))->with('success', 'Partner Updated Successfully');
+        return redirect(route('partner_index'))->with('success', 'Partner Updated Successfully');
+    }
 
+    public function destroy($id)
+    {
+        $partner = Partner::findOrFail($id);
+        Storage::delete($partner->image);
+        $partner->delete();
+        return redirect()->back()->with('success', 'Successfully Deleted Resource');
     }
 }

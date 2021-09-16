@@ -28,7 +28,7 @@
                         <?php if($images): ?>
                             <div class="owl-carousel portfolio-details-carousel">
                                 <?php $__currentLoopData = $images; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $image): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <img src="<?php echo e(Storage::url($image->image)); ?>"  class="img-fluid" alt="">
+                                    <img src="<?php echo e(Storage::url($image->image)); ?>"  class="img-fluid" style="height: 600px; object-fit: contain;" alt="">
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </div>
                         <?php endif; ?>

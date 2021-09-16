@@ -20,7 +20,7 @@
                     <input class="form-control-file" type="file" name="image">
 
                 </div>
-                <div class="form-group"><button class="btn btn-primary" type="submit">ADD</button></div>
+                <div class="form-group"><button class="btn btn-primary" type="submit">Update</button></div>
             </form>
         </section>
     <?php endif; ?>
