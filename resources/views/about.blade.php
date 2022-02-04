@@ -26,22 +26,12 @@
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0">
                         <h3></h3>
-                        <p>
-                            ASTU Entraprenurship Development Center is a non academic program aiming to develop bussines
+                        <p class="pl-4 pr-4">  ASTU Entraprenurship Development Center is a non academic program aiming to develop bussines
                             and entraprenural skills of students in adama science and technology university.</br>
                             ASTU-EDC is set up to provide bussines incubation program and technology transfer initiative
                             for various youth students , innovative individuals and SMEs in the multideciplinary areas
-                            of
-                            science and technology on behalf of Adama Science And Technology University(ASTU).</br></br>
-                            Our main goal is to help create and grow young technology and inovation-based bussines
-                            needed for developing Ethiopian Industries by technical serviices and connections, and by
-                            creating
-                            enterprenurship culture in the university eco-system in the community. specifically, aims to
-                            inhance and nurture innovation,creative thinking skills, and work skills of students and
-                            thereby develop good social relevant projects and to
-                            prototype them and help them find the fundeing needed from govenrment or private sources to
-                            start or help them to be good innovators and enterpreneurs.
-                            </br>
+                            of science and technology on behalf of Adama Science And Technology University(ASTU).</p>
+                        <p class="pl-4 pr-4" >
                             Scince its establishment in 2015, EDC has provided services to
                             students,staffs,MSMES,communities and individuals and aims to eastablish best practice on
                             entrapreurship development and incubation program and to create innovate and sustainable

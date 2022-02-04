@@ -21,33 +21,26 @@
             <div class="carousel-item">
                 <div class="carousel-container">
                     <h2 class="animate__animated animate__fadeInDown"></h2>
-                    <p class="animate__animated animate__fadeInUp">ASTU-EDC is set up to provide bussines incubation
+                    <p class="animate__animated animate__fadeInUp indented">
+                    <strong>
+                        ASTU-EDC is set up to provide bussines incubation
                         program
                         and technology transfer initiative for various youth students , innovative individuals and SMEs
                         in
                         the multideciplinary areas of
                         science and technology on behalf of Adama Science And Technology University(ASTU).
+                    </strong>
                     </p>
-                    |
+                    
                 </div>
             </div>
 
             <!-- Slide 3 -->
             <div class="carousel-item">
                 <div class="carousel-container">
-                    <h2 class="animate__animated animate__fadeInDown"></h2>
-                    <p class="animate__animated animate__fadeInUp">Our main goal is to help create and grow young
-                        technology
-                        and inovation-based bussines needed for developing Ethiopian Industries by technical services
-                        and
-                        connections, and by creating
-                        enterprenurship culture in the university eco-system in the community. specifically, aims to
-                        inhance
-                        and nurture innovation,creative thinking skills, and work skills of students and thereby develop
-                        good social relevant projects and to
-                        prototype them and help them find the fundeing needed from govenrment or private sources to
-                        start or
-                        help them to be good innovators and enterprenurs.
+                    <h2 class="animate__animated animate__fadeInDown"><span>ASTU-EDC</span></h2>
+                    <p class="animate__animated animate__fadeInUp">
+                    <strong>"One solution for business education"</strong>
                     </p>
 
                 </div>
@@ -281,7 +274,9 @@
         @if(count($partners) > 0)
             <div class="section">
                 <div class="container">
-                    <h3>Our Partners</h3>
+                <div class="section-title">
+                        <h2>Our Partners</h2>
+                    </div>
                     <div class="row">
 
                         @foreach($partners as $partner)

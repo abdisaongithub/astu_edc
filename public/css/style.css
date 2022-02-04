@@ -2359,3 +2359,20 @@ section {
 #footer .credits a {
   color: #a2cce3;
 }
+#footer-contact{
+  margin-left: 150px;
+}
+.indented{
+  padding-left:10pt;
+  padding-right:10pt;
+}
+.accordion, .card-header{
+  background:none;
+}
+.accordion, .h5{
+  text-decoration: none;
+  
+}
+
+
+

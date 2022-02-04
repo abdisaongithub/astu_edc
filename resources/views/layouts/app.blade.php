@@ -133,13 +133,13 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-lg-3 col-md-6 footer-links">
+                <div class="col-lg-3 col-md-6 footer-links pl-5 mr-5">
                     <h4>Useful Links</h4>
                     <ul>
                         <li><i class="bx bx-chevron-right"></i> <a href="{{ route('welcome') }}">Home</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="{{ route('about') }}">About us</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="{{ route('contact') }}">Contact us</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('dashboard_index') }}">Admins Area</a></li>
+                        
 
                     </ul>
                 </div>
@@ -156,7 +156,7 @@
                     </ul>
                 </div>
 
-                <div class="col-lg-3 col-md-6 footer-contact">
+                <div class="col-lg-3 col-md-6 footer-contact" id="footer-contact">
                     <h4>Contact Us</h4>
                     <p>
                         Adama Science and Technology University <br>
@@ -164,18 +164,6 @@
                         <strong>Phone:</strong> <a href="tel:+251-22-211-1948" target="-_blank"> +251-22-211-1948 </a> <br>
                         <strong>Email:</strong> <a href="mail:edc@astu.edu.et" target="_blank">edc@astu.edu.et</a><br>
                         {{--TODO: Replace email by email from edc domain--}}
-                    </p>
-                </div>
-
-                <div class="col-lg-3 col-md-6 footer-info">
-                    <h3>About EDC</h3>
-                    <p>Our main goal is to help create and grow young technology and inovation-based bussines needed for
-                        developing Ethiopian Industries by technical services and connections, and by creating
-                        enterprenurship culture in the university eco-system in the community. specifically, aims to
-                        inhance and nurture innovation,creative thinking skills, and work skills of students and thereby
-                        develop good social relevant projects and to
-                        prototype them and help them find the fundeing needed from govenrment or private sources to
-                        start or help them to be good innovators and enterprenurs.
                     </p>
                     <div class="social-links mt-3">
                         <a href="https://t.me/ASTUEDC" target="_blank" class="telegram"><i class="bx bxl-telegram"></i></a>
@@ -189,6 +177,8 @@
                     </div>
                 </div>
 
+                
+
             </div>
         </div>
     </div>
@@ -199,7 +189,7 @@
         </div>
         <div class="credits">
 
-            Powered by <a href="t.me/abd_dba" target="_blank">Kuta Software Solutions</a>
+            Powered by <a href="https://www.linkdin.com/in/daniel-muleta-23653621b" target="_blank">Hamilee technologies</a>
 
         </div>
     </div>
