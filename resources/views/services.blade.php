@@ -189,7 +189,7 @@
                         proven feasibility, novelty and advantage that are sought in the national as well as
                         international marketplace.
                     </p><br />
-                    <h3>WHAT WILL our INCUBATION OFFER YOU?</h3>
+                    <h3>what will our incubation offer you?</h3>
                     <ul>
                         <li>Access laboratory equipment, software and lab facilities available in ASTU</li>
                         <li>Partner with industries for your R&D needs.</li>
@@ -206,9 +206,9 @@
                     </ul>
                 </section>
                 <section id="fis" class="py-2">
-                    <h3>3. Females Innovative Support Group</h3>
+                    <h3>3. FEAMALES INNOVATIVE SUPPORT GROUP</h3>
                     <h5>overview</h5>
-                    <p class="indented">FIS - Females Innovator Support Group is a community practice at Adama science and technology
+                    <p class="indented">FIS - Females Innovative Support Group is a community practice at Adama science and technology
                         University Entrepreneurship Development Center (EDC).
                         FIS strive to enable discussion and dialogue about existing female students’ problems and
                         solution and stimulate innovation through learning and sharing existing knowledge and
@@ -227,7 +227,7 @@
                     </ul>
                 </section>
                 <section id="coaching" class="py-2">
-                    <h3>4. Coaching and Mentorship</h3>
+                    <h3>4. COACHING AND MENTORSHIP</h3>
                     <h5>overview</h5>
                     <p class="indented">We provide business coaching and mentorship services for startups, micro and small enterprises,
                         and individuals</p>

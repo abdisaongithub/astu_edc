@@ -7,6 +7,7 @@ use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
+
 class TestimonialController extends Controller
 {
     public function index()
@@ -60,7 +61,7 @@ class TestimonialController extends Controller
         }
 
 
-        $path = Storage::put('public/', $request->file('image'));
+        $path = Storage::disk('local')->put('public/', $request->file('image'));
         $testimonial->image = $path;
 
         $testimonial->save();

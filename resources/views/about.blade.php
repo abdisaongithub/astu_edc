@@ -88,7 +88,7 @@
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title"><a href="#">Our Vision</a></h5>
-                                <p class="card-text">To become one of the leading EDCs in Ethiopia, become top technology and business incubation Center, and renown in the region and nation wise by 2025 </p>
+                                <p class="card-text">To become one of the leading EDCs in Ethiopia, become top technology and business incubation center, and renown in the region and nationwide by 2025 </p>
 
                             </div>
                         </div>
@@ -151,7 +151,7 @@
                 <div class="owl-carousel testimonials-carousel">
                     @foreach($testimonials as $test)
                     <div class="testimonial-item">
-                        <img src="{{ Storage::url($test->image) }}" class="testimonial-img" alt="">
+                        <img src="{{ Storage::url($test->image) }}" style="object-fit: cover; height: 100px; width: 100px;" class="testimonial-img" alt="">
                         <h3>{{ $test->name }}</h3>
                         <h4>{{ $test->position }}</h4>
                         <p>

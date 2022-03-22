@@ -27,6 +27,7 @@ class StartupController extends Controller
 
 
         $startup = new Startup($validated);
+        $startup->image = 'some/path';
         $startup->save();
 
         if ($request->phone){
@@ -147,6 +148,10 @@ class StartupController extends Controller
     public function destroy($id)
     {
         $startup = Startup::findOrFail($id);
+        $images = Image::where('startup_id', $startup->id)->get();
+        foreach ($images as $image){
+            $image->delete();
+        }
         $startup->delete();
         return redirect()->back()->with('success', 'Startup Deleted Successfully');
     }

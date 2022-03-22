@@ -189,7 +189,7 @@
         </div>
         <div class="credits">
 
-            Powered by <a href="https://www.linkdin.com/in/daniel-muleta-23653621b" target="_blank">Hamilee technologies</a>
+            Powered by <a href="t.me/abd_dba" target="_blank">Hamilee technologies</a>
 
         </div>
     </div>

@@ -28,7 +28,7 @@ class MentorRequest extends FormRequest
             'title' => 'required|string',
             'occupation' => 'required|string',
             'rank' => 'required|string',
-            'image' => 'required',
+//            'image' => 'required',
         ];
     }
 }

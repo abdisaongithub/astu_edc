@@ -31,7 +31,7 @@
                         science and technology on behalf of Adama Science And Technology University(ASTU).
                     </strong>
                     </p>
-                    
+
                 </div>
             </div>
 

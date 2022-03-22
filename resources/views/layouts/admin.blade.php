@@ -80,8 +80,7 @@
                                    href="#">
                                     <span
                                         class="d-none d-lg-inline mr-2 text-gray-600 small">{{ auth()->user()->name }}</span>
-                                    <img class="border rounded-circle img-profile"
-                                         src="http://localhost:8000/dashboard_assets/img/avatars/avatar1.jpeg"></a>
+                                    </a>
                                 <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in">
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST"

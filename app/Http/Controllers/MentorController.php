@@ -26,7 +26,9 @@ class MentorController extends Controller
 
         $mentor = new Mentor($validated);
 
-        $mentor->image = Storage::put('public/', $request->file('image'));
+        $path = Storage::disk('local')->put('public/', $request->file('image'));
+
+        $mentor->image = $path;
 
         $mentor->save();
 
@@ -51,7 +53,7 @@ class MentorController extends Controller
 
         if (isset($request->image)){
             Storage::delete($mentor->image);
-            $mentor->image = Storage::put('public/', $request->file('image'));
+            $mentor->image = Storage::disk('local')->put('public/', $request->file('image'));
         }
 
         $mentor->save();

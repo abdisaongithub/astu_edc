@@ -6,8 +6,6 @@
 
 @section('messages')
     @if(count($messages) > 0)
-
-
         <li class="nav-item dropdown no-arrow mx-1">
             <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link"
                                                        aria-expanded="false" data-toggle="dropdown"
@@ -21,15 +19,14 @@
                     @foreach($messages as $message)
                         <a
                             class="dropdown-item d-flex align-items-center" href="#">
-                            <div class="dropdown-list-image mr-3"><img class="rounded-circle"
-                                                                       src="{{ asset('dashboard_assets/img/avatars/avatar4.jpeg') }}">
+                            <div class="dropdown-list-image mr-3">
+                                <img class="rounded-circle" src="{{ asset('dashboard_assets/img/avatars/avatar4.jpeg') }}">
                                 <div class="bg-success status-indicator"></div>
                             </div>
                             <div class="font-weight-bold">
                                 <div class="text-truncate"><span>{{ $message->message }}</span></div>
                                 <p class="small text-gray-500 mb-0">{{ $message->email }}</p>
                             </div>
-
                         </a>
                     @endforeach
 

@@ -86,7 +86,7 @@
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title"><a href="#">Our Vision</a></h5>
-                                <p class="card-text">To become one of the leading EDCs in Ethiopia, become top technology and business incubation Center, and renown in the region and nation wise by 2025 </p>
+                                <p class="card-text">To become one of the leading EDCs in Ethiopia, become top technology and business incubation center, and renown in the region and nationwide by 2025 </p>
 
                             </div>
                         </div>
