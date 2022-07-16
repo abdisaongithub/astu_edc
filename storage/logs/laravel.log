@@ -7220,3 +7220,38 @@ Stack trace:
 [stacktrace]
 #0 {main}
 "} 
+[2022-07-16 13:14:01] local.ERROR: Class 'User' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'User' not found at /opt/lampp/htdocs/apps/astu_edc/database/seeds/AdminUserSeeder.php:14)
+[stacktrace]
+#0 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): AdminUserSeeder->run()
+#1 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#2 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#3 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#4 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Container/Container.php(590): Illuminate\\Container\\BoundMethod::call()
+#5 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(134): Illuminate\\Container\\Container->call()
+#6 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(48): Illuminate\\Database\\Seeder->__invoke()
+#7 /opt/lampp/htdocs/apps/astu_edc/database/seeds/DatabaseSeeder.php(15): Illuminate\\Database\\Seeder->call()
+#8 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): DatabaseSeeder->run()
+#9 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#10 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#11 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#12 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Container/Container.php(590): Illuminate\\Container\\BoundMethod::call()
+#13 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(134): Illuminate\\Container\\Container->call()
+#14 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(63): Illuminate\\Database\\Seeder->__invoke()
+#15 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php(129): Illuminate\\Database\\Console\\Seeds\\SeedCommand->Illuminate\\Database\\Console\\Seeds\\{closure}()
+#16 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(64): Illuminate\\Database\\Eloquent\\Model::unguarded()
+#17 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Seeds\\SeedCommand->handle()
+#18 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#20 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#21 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Container/Container.php(590): Illuminate\\Container\\BoundMethod::call()
+#22 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call()
+#23 /opt/lampp/htdocs/apps/astu_edc/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute()
+#24 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run()
+#25 /opt/lampp/htdocs/apps/astu_edc/vendor/symfony/console/Application.php(1009): Illuminate\\Console\\Command->run()
+#26 /opt/lampp/htdocs/apps/astu_edc/vendor/symfony/console/Application.php(273): Symfony\\Component\\Console\\Application->doRunCommand()
+#27 /opt/lampp/htdocs/apps/astu_edc/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun()
+#28 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run()
+#29 /opt/lampp/htdocs/apps/astu_edc/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(131): Illuminate\\Console\\Application->run()
+#30 /opt/lampp/htdocs/apps/astu_edc/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#31 {main}
+"} 
